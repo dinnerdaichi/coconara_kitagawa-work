@@ -1,0 +1,34 @@
+@use "../../foundation/mixin" as m;
+@use "../../foundation/functions" as *;
+
+
+// ↓これsp用のメディアクエリ ~480px
+.test{
+
+  @include m.mq(sp){
+      // margin-top: 0;
+      // こんな感じで入れ子で書けるよ
+    }
+
+}
+
+// もしスマホファーストで書くならこれがpc用 481px~
+// スニペット登録したら良いと思う　めんどかったら普通の書き方でもいいよ〜
+@include m.mq(pc){
+
+}
+
+
+// 関数の使い方
+.test{
+  margin-top: rclamp(40, 1920);
+  // pcはrclamp関数つかう　1個目は値、2個目は縮めるのが始まる値、
+  // この場合、martgin-top:40pxで1920px以下から良い感じに縮む
+
+  @include m.mq(sp){
+      // スマホ時はvw-sp関数を使う
+    margin-top: vw-sp(40);
+    // vw-sp関数は375pxを基準に縮小　値だけでおｋ
+    }
+
+}
