@@ -230,6 +230,7 @@ main {
 
 .primary__text {
   margin-top: 8vw;
+  font-size: 4.2666666667vw;
   line-height: 1.75;
 }
 
@@ -251,6 +252,7 @@ main {
 
 .about__text {
   margin-top: 8vw;
+  font-size: 4.2666666667vw;
 }
 
 .about__button {
@@ -271,6 +273,10 @@ main {
 
 .item-menu__title {
   font-size: 8vw;
+}
+
+.item-menu__subtitle {
+  font-size: 4.2666666667vw;
 }
 
 .item-menu__list {
@@ -308,6 +314,7 @@ main {
 
 .commitment__text {
   margin-top: 8vw;
+  font-size: 4.2666666667vw;
   line-height: 1.75;
 }
 
@@ -325,6 +332,10 @@ main {
 
 .customer-review__title {
   font-size: 8vw;
+}
+
+.customer-review__subtitle {
+  font-size: 4.2666666667vw;
 }
 
 .customer-review__content {

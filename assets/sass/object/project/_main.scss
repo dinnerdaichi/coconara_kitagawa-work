@@ -53,7 +53,6 @@ p+p {
 
 a {
   text-decoration: none;
-  // font-family: Noto Serif JP, serif;
   color: $text-color;
 }
 
@@ -238,6 +237,7 @@ main {
 
 .primary__text {
   margin-top: vw-sp(30);
+  font-size: vw-sp(16);
   line-height: 1.75;
 }
 
@@ -259,6 +259,7 @@ main {
 
 .about__text {
   margin-top: vw-sp(30);
+  font-size: vw-sp(16);
 }
 
 .about__button {
@@ -279,6 +280,10 @@ main {
 
 .item-menu__title {
   font-size: vw-sp(30);
+}
+
+.item-menu__subtitle {
+  font-size: vw-sp(16);
 }
 
 .item-menu__list {
@@ -316,6 +321,7 @@ main {
 
 .commitment__text {
   margin-top: vw-sp(30);
+  font-size: vw-sp(16);
   line-height: 1.75;
 }
 
@@ -333,6 +339,10 @@ main {
 
 .customer-review__title {
   font-size: vw-sp(30);
+}
+
+.customer-review__subtitle {
+  font-size: vw-sp(16);
 }
 
 .customer-review__content {
