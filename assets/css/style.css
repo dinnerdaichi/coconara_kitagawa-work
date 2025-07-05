@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*--------------------------------------*
     * layout
 *--------------------------------------*/
@@ -14,4 +15,342 @@
   .test {
     margin-top: 10.6666666667vw;
   }
+}
+
+/* =============================================
+共通
+============================================= */
+body {
+  font-family: Noto Sans JP, serif;
+  color: #4f4f4f;
+}
+
+p + p {
+  margin-top: 1.3333333333vw;
+}
+
+a {
+  text-decoration: none;
+  color: #4f4f4f;
+}
+
+picture img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.button {
+  display: block;
+  text-align: center;
+  padding: 3.4666666667vw 2.6666666667vw;
+  font-size: 5.3333333333vw;
+  font-weight: bold;
+  font-family: Noto Serif JP, serif;
+  border-radius: 100vh;
+  background-color: #f6fda1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/* =============================================
+ヘッダー
+============================================= */
+header {
+  position: fixed;
+  width: 100%;
+  height: 24vw;
+  background: #fff;
+  z-index: 100;
+}
+
+.header__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 4vw 4.2666666667vw;
+}
+
+.header__logo {
+  width: 48.2666666667vw;
+  height: auto;
+}
+
+.header__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 4.5333333333vw;
+     -moz-column-gap: 4.5333333333vw;
+          column-gap: 4.5333333333vw;
+}
+
+.header__icon {
+  width: 9.3333333333vw;
+  height: 9.3333333333vw;
+}
+
+/* ここから下がハンバーガーメニューに関するCSS */
+/* チェックボックスを非表示にする */
+.drawer_hidden {
+  display: none;
+}
+
+/* ハンバーガーアイコンの設置スペース */
+.drawer_open {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 8vw;
+  width: 8vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  z-index: 100;
+  /* 重なり順を一番上にする */
+  cursor: pointer;
+}
+
+/* ハンバーガーメニューのアイコン */
+.drawer_open span,
+.drawer_open span:before,
+.drawer_open span:after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 8vw;
+  background: #2f2f2f;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  position: absolute;
+}
+
+/* 三本線の一番上の棒の位置調整 */
+.drawer_open span:before {
+  bottom: 8px;
+}
+
+/* 三本線の一番下の棒の位置調整 */
+.drawer_open span:after {
+  top: 8px;
+}
+
+/* アイコンがクリックされたら真ん中の線を透明にする */
+#drawer_input:checked ~ .drawer_open span {
+  background: rgba(255, 255, 255, 0);
+}
+
+/* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+#drawer_input:checked ~ .drawer_open span::before {
+  bottom: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+#drawer_input:checked ~ .drawer_open span::after {
+  top: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+/* メニューのデザイン*/
+.nav_content {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 24vw;
+  left: 100%;
+  /* メニューを画面の外に飛ばす */
+  z-index: 99;
+  background: rgba(255, 255, 255, 0.7);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/* メニュー黒ポチを消す */
+.nav_list {
+  padding: 12.5333333333vw 9.0666666667vw;
+  height: 100%;
+  font-size: 5.3333333333vw;
+  list-style: none;
+}
+
+.nav_item span {
+  display: inline-block;
+  margin-right: 4.5333333333vw;
+  width: 8.5333333333vw;
+  height: 2px;
+  vertical-align: middle;
+  background-color: #4f4f4f;
+}
+
+.nav_item:not(:first-child) {
+  margin-top: 13.3333333333vw;
+}
+
+/* アイコンがクリックされたらメニューを表示 */
+#drawer_input:checked ~ .nav_content {
+  left: 0;
+  /* メニューを画面に入れる */
+}
+
+main {
+  position: relative;
+  top: 24vw;
+}
+
+/* =============================================
+プライマリー
+============================================= */
+.primary {
+  font-family: Noto Serif JP, serif;
+}
+
+.primary__inner {
+  padding: 8vw 5.8666666667vw 16vw;
+  text-align: center;
+}
+
+.primary__title {
+  font-size: 6.6666666667vw;
+}
+
+.primary__text {
+  margin-top: 8vw;
+  line-height: 1.75;
+}
+
+/* =============================================
+元介護士による実体験に〜
+============================================= */
+.about {
+  text-align: center;
+}
+
+.about__inner {
+  padding: 16vw 8.5333333333vw;
+}
+
+.about__title {
+  font-size: 6.6666666667vw;
+  font-family: Noto Serif JP, serif;
+}
+
+.about__text {
+  margin-top: 8vw;
+}
+
+.about__button {
+  margin-top: 10.1333333333vw;
+}
+
+/* =============================================
+商品一覧
+============================================= */
+.item-menu {
+  text-align: center;
+  background-color: #e5f1f8;
+}
+
+.item-menu__inner {
+  padding: 13.3333333333vw 11.2vw;
+}
+
+.item-menu__title {
+  font-size: 8vw;
+}
+
+.item-menu__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 9.3333333333vw;
+  grid-row-gap: 5.3333333333vw;
+  margin-top: 4vw;
+}
+
+.item-menu__image {
+  width: 33.3333333333vw;
+  height: auto;
+}
+
+.item-menu__text {
+  margin-top: 1.3333333333vw;
+}
+
+/* =============================================
+商品へのこだわり
+============================================= */
+.commitment {
+  text-align: center;
+}
+
+.commitment__inner {
+  padding: 16vw 3.7333333333vw;
+}
+
+.commitment__title {
+  font-size: 6.6666666667vw;
+  font-family: Noto Serif JP, serif;
+}
+
+.commitment__text {
+  margin-top: 8vw;
+  line-height: 1.75;
+}
+
+/* =============================================
+お客様の声
+============================================= */
+.customer-review {
+  text-align: center;
+  background-color: #e5f1f8;
+}
+
+.customer-review__inner {
+  padding: 16vw 5.3333333333vw;
+}
+
+.customer-review__title {
+  font-size: 8vw;
+}
+
+.customer-review__content {
+  margin-top: 8vw;
+}
+
+/* =============================================
+フッター
+============================================= */
+footer {
+  text-align: center;
+  background-color: #6e9fb9;
+}
+
+.footer__inner {
+  padding: 8vw 9.8666666667vw;
+}
+
+.footer__button {
+  margin-bottom: 8.8vw;
+}
+
+.footer__button + .footer__button {
+  margin-top: 8vw;
+}
+
+.footer__copyright {
+  color: #000;
 }

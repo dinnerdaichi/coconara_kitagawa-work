@@ -1,34 +1,364 @@
-@use "../../foundation/mixin" as m;
-@use "../../foundation/functions" as *;
+@use "../../foundation/mixin"as m;
+@use "../../foundation/functions"as *;
 
 
 // ↓これsp用のメディアクエリ ~480px
-.test{
+.test {
 
-  @include m.mq(sp){
-      // margin-top: 0;
-      // こんな感じで入れ子で書けるよ
-    }
+  @include m.mq(sp) {
+    // margin-top: 0;
+    // こんな感じで入れ子で書けるよ
+  }
 
 }
 
 // もしスマホファーストで書くならこれがpc用 481px~
 // スニペット登録したら良いと思う　めんどかったら普通の書き方でもいいよ〜
-@include m.mq(pc){
-
-}
+@include m.mq(pc) {}
 
 
 // 関数の使い方
-.test{
+.test {
   margin-top: rclamp(40, 1920);
   // pcはrclamp関数つかう　1個目は値、2個目は縮めるのが始まる値、
   // この場合、martgin-top:40pxで1920px以下から良い感じに縮む
 
-  @include m.mq(sp){
-      // スマホ時はvw-sp関数を使う
+  @include m.mq(sp) {
+    // スマホ時はvw-sp関数を使う
     margin-top: vw-sp(40);
     // vw-sp関数は375pxを基準に縮小　値だけでおｋ
-    }
+  }
 
+}
+
+/* =============================================
+共通
+============================================= */
+
+// カラー
+$text-color: #4f4f4f;
+$yellow: #f6fda1;
+$accent-blue: #4596c3;
+$blue: #6e9fb9;
+$light-blue: #e5f1f8;
+
+body {
+  font-family: Noto Sans JP, serif;
+  color: $text-color;
+}
+
+p+p {
+  margin-top: vw-sp(5);
+}
+
+a {
+  text-decoration: none;
+  // font-family: Noto Serif JP, serif;
+  color: $text-color;
+}
+
+// 画像
+picture img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+// ボタン
+
+.button {
+  display: block;
+  text-align: center;
+  padding: vw-sp(13) vw-sp(10);
+  font-size: vw-sp(20);
+  font-weight: bold;
+  font-family: Noto Serif JP, serif;
+  border-radius: 100vh;
+  background-color: $yellow;
+  transition: 0.5s;
+}
+
+.button:hover {}
+
+/* =============================================
+ヘッダー
+============================================= */
+header {
+  position: fixed;
+  width: 100%;
+  height: vw-sp(90);
+  background: #fff;
+  z-index: 100;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: vw-sp(15) vw-sp(16);
+}
+
+.header__logo {
+  width: vw-sp(181);
+  height: auto;
+}
+
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  column-gap: vw-sp(17);
+}
+
+.header__icon {
+  width: vw-sp(35);
+  height: vw-sp(35);
+}
+
+/* ここから下がハンバーガーメニューに関するCSS */
+
+/* チェックボックスを非表示にする */
+.drawer_hidden {
+  display: none;
+}
+
+/* ハンバーガーアイコンの設置スペース */
+.drawer_open {
+  display: flex;
+  height: vw-sp(30);
+  width: vw-sp(30);
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  /* 重なり順を一番上にする */
+  cursor: pointer;
+}
+
+/* ハンバーガーメニューのアイコン */
+.drawer_open span,
+.drawer_open span:before,
+.drawer_open span:after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: vw-sp(30);
+  background: #2f2f2f;
+  transition: 0.5s;
+  position: absolute;
+}
+
+/* 三本線の一番上の棒の位置調整 */
+.drawer_open span:before {
+  bottom: 8px;
+}
+
+/* 三本線の一番下の棒の位置調整 */
+.drawer_open span:after {
+  top: 8px;
+}
+
+/* アイコンがクリックされたら真ん中の線を透明にする */
+#drawer_input:checked~.drawer_open span {
+  background: rgba(255, 255, 255, 0);
+}
+
+/* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+#drawer_input:checked~.drawer_open span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+
+#drawer_input:checked~.drawer_open span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* メニューのデザイン*/
+.nav_content {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: vw-sp(90);
+  left: 100%;
+  /* メニューを画面の外に飛ばす */
+  z-index: 99;
+  background: rgba(255, 255, 255, 0.7);
+  transition: .5s;
+}
+
+/* メニュー黒ポチを消す */
+.nav_list {
+  padding: vw-sp(47) vw-sp(34);
+  height: 100%;
+  font-size: vw-sp(20);
+  list-style: none;
+}
+
+.nav_item {
+  span {
+    display: inline-block;
+    margin-right: vw-sp(17);
+    width: vw-sp(32);
+    height: 2px;
+    vertical-align: middle;
+    background-color: $text-color;
+  }
+}
+
+.nav_item:not(:first-child) {
+  margin-top: vw-sp(50);
+}
+
+/* アイコンがクリックされたらメニューを表示 */
+#drawer_input:checked~.nav_content {
+  left: 0;
+  /* メニューを画面に入れる */
+}
+
+main {
+  position: relative;
+  top: vw-sp(90);
+}
+
+/* =============================================
+プライマリー
+============================================= */
+.primary {
+  font-family: Noto Serif JP, serif;
+}
+
+.primary__inner {
+  padding: vw-sp(30) vw-sp(22) vw-sp(60);
+  text-align: center;
+}
+
+.primary__title {
+  font-size: vw-sp(25);
+}
+
+.primary__text {
+  margin-top: vw-sp(30);
+  line-height: 1.75;
+}
+
+/* =============================================
+元介護士による実体験に〜
+============================================= */
+.about {
+  text-align: center;
+}
+
+.about__inner {
+  padding: vw-sp(60) vw-sp(32);
+}
+
+.about__title {
+  font-size: vw-sp(25);
+  font-family: Noto Serif JP, serif;
+}
+
+.about__text {
+  margin-top: vw-sp(30);
+}
+
+.about__button {
+  margin-top: vw-sp(38);
+}
+
+/* =============================================
+商品一覧
+============================================= */
+.item-menu {
+  text-align: center;
+  background-color: $light-blue;
+}
+
+.item-menu__inner {
+  padding: vw-sp(50) vw-sp(42);
+}
+
+.item-menu__title {
+  font-size: vw-sp(30);
+}
+
+.item-menu__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: vw-sp(35);
+  grid-row-gap: vw-sp(20);
+  margin-top: vw-sp(15);
+}
+
+.item-menu__image {
+  width: vw-sp(125);
+  height: auto;
+}
+
+.item-menu__text {
+  margin-top: vw-sp(5);
+}
+
+/* =============================================
+商品へのこだわり
+============================================= */
+.commitment {
+  text-align: center;
+}
+
+.commitment__inner {
+  padding: vw-sp(60) vw-sp(14);
+}
+
+.commitment__title {
+  font-size: vw-sp(25);
+  font-family: Noto Serif JP, serif;
+}
+
+.commitment__text {
+  margin-top: vw-sp(30);
+  line-height: 1.75;
+}
+
+/* =============================================
+お客様の声
+============================================= */
+.customer-review {
+  text-align: center;
+  background-color: $light-blue;
+}
+
+.customer-review__inner {
+  padding: vw-sp(60) vw-sp(20);
+}
+
+.customer-review__title {
+  font-size: vw-sp(30);
+}
+
+.customer-review__content {
+  margin-top: vw-sp(30);
+}
+
+/* =============================================
+フッター
+============================================= */
+footer {
+  text-align: center;
+  background-color: $blue;
+}
+
+.footer__inner {
+  padding: vw-sp(30) vw-sp(37);
+}
+
+.footer__button {
+  margin-bottom: vw-sp(33);
+}
+
+.footer__button+.footer__button {
+  margin-top: vw-sp(30);
+}
+
+.footer__copyright {
+  color: #000;
 }
