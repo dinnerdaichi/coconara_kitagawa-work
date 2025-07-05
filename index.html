@@ -3,11 +3,13 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="優しさを、かたちに。'らしさ'を失わない日常に馴染む介護雑貨。">
-  <meta name="robots" content="noindex,nofollow" />
+  <meta name="robots" content="noindex,nofollow">
   <title>キタガワ．</title>
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
   <link rel="stylesheet" href="./assets/css/reset.css">
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
@@ -25,16 +27,12 @@
         <div class="header__icon">
           <img src="./assets/image/icon_insta.webp" alt="">
         </div>
-
         <!-- ハンバーガーメニュー部分 -->
         <div class="nav">
-
           <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
           <input id="drawer_input" class="drawer_hidden" type="checkbox">
-
           <!-- ハンバーガーアイコン -->
           <label for="drawer_input" class="drawer_open"><span></span></label>
-
           <!-- メニュー -->
           <nav class="nav_content">
             <ul class="nav_list">
@@ -44,9 +42,9 @@
               <li class="nav_item"><a href=""><span></span>お客様の声</a></li>
               <li class="nav_item"><a href=""><span></span>よくあるご質問</a></li>
               <li class="nav_item"><a href=""><span></span>お問い合わせ</a></li>
+              <a href="" class="header__button button">商品購入はこちら</a>
             </ul>
           </nav>
-
         </div>
       </div>
     </div>
@@ -61,142 +59,157 @@
         <img src="./assets/image/mv/MV_pc.png" alt="メインビジュアル">
       </picture>
     </div>
-
-    <section class="primary">
-      <div class="primary__inner">
-        <h2 class="primary__title">元介護士による実体験に<br>基づいた商品設計</h2>
-        <p class="primary__text">
-          介護をする人も、される人も。<br>
-          ほんの少しの「おしゃれ」や「気配り」が、毎日の介護を明るく前向きに変えてくれます。キタガワワークスは、元介護士の経験をもとに生まれた、“使う人の気持ちに寄り添う”ハンドメイド介護雑貨ブランドです。<br>
-          定番のウロバッグカバーをはじめ、手に取りやすい価格と、誰でも使えるシンプルでナチュラルなデザイン。<br>
-          「こんなものがほしかった」と思ってもらえる、そんなやさしさを、これからも届けていきます。
-        </p>
-      </div>
-    </section>
-
-    <section class="about">
-      <picture>
-        <source srcset="./assets/image/urobag/sp_thumnail_urobbag.png" media="(max-width: 767px)">
-        <source srcset="./assets/image/urobag/hp_thumnail_urobbag.png" media="(min-width: 768px)">
-        <img src="./assets/image/urobag/hp_thumnail_urobbag.png" alt="ウローバッグ">
-      </picture>
-      <div class="about__inner">
-        <h2 class="about__title">キタガワワークスの<br>
-          「ウローバッグ<br>
-          カバー」とは？</h2>
-        <p class="about__text">
-          ウロバッグカバーとは、排尿障害や膀胱機能の低下でウロバッグ（導尿バッグ）を使用している人へ<br>
-          外出時の見た目や尿漏れ、臭いを気にせず過ごせるようにウロバッグに被せるカバーです。<br>
-          キタガワワークスでは、元介護士の経験から「介護する人」「される人」も使い勝手の良い設計で<br>
-          日常使いのしやすいおしゃれなウロバッグカバーを提案しています。
-        </p>
-        <a href="" class="about__button button">詳しくはこちら</a>
-      </div>
-    </section>
-
-    <section class="item-menu">
-      <div class="item-menu__inner">
-        <div class="item-menu__heading">
-          <h2 class="item-menu__title">商品一覧</h2>
-          <span class="item-menu__subtitle">ITEM MENU</span>
+    <div class="inner-pc">
+      <section class="primary">
+        <div class="primary__inner">
+          <h2 class="primary__title section__title">元介護士による実体験に<br>基づいた商品設計</h2>
+          <p class="primary__text text-area">
+            介護をする人も、される人も。<br>
+            ほんの少しの「おしゃれ」や「気配り」が、毎日の介護を明るく前向きに変えてくれます。<br class="pc-only">
+            キタガワワークスは、元介護士の経験をもとに生まれた、<br class="pc-only">
+            “使う人の気持ちに寄り添う”ハンドメイド介護雑貨ブランドです。<br>
+            定番のウロバッグカバーをはじめ、手に取りやすい価格と、<br class="pc-only">
+            誰でも使えるシンプルでナチュラルなデザイン。<br>
+            「こんなものがほしかった」と思ってもらえる、<br class="pc-only">
+            そんなやさしさを、これからも届けていきます。
+          </p>
         </div>
-        <ul class="item-menu__list">
-          <li class="item-menu__content">
-            <div class="item-menu__image">
-              <img src="./assets/image/itemmenu/all_icon.png" alt="">
-            </div>
-            <p class="item-menu__text">ALL</p>
-          </li>
-          <li class="item-menu__content">
-            <div class="item-menu__image">
-              <img src="./assets/image/itemmenu/urobag_icon.png" alt="">
-            </div>
-            <p class="item-menu__text">ウロバック</p>
-          </li>
-          <li class="item-menu__content">
-            <div class="item-menu__image">
-              <img src="./assets/image/itemmenu/towl_icon.png" alt="">
-            </div>
-            <p class="item-menu__text">車いすブランケット</p>
-          </li>
-          <li class="item-menu__content">
-            <div class="item-menu__image">
-              <img src="./assets/image/itemmenu/pants_icon.png" alt="">
-            </div>
-            <p class="item-menu__text">介護用パンツ</p>
-          </li>
-          <li class="item-menu__content">
-            <div class="item-menu__image">
-              <img src="./assets/image/itemmenu/ecobag_icon.png" alt="">
-            </div>
-            <p class="item-menu__text">エコバッグ・ポーチ</p>
-          </li>
-          <li class="item-menu__content">
-            <div class="item-menu__image">
-              <img src="./assets/image/itemmenu/kitchen_icon.png" alt="">
-            </div>
-            <p class="item-menu__text">キッチン用品</p>
-          </li>
-          <li class="item-menu__content">
-            <div class="item-menu__image">
-              <img src="./assets/image/itemmenu/kids_icon.png" alt="">
-            </div>
-            <p class="item-menu__text">子供用品</p>
-          </li>
-        </ul>
-      </div>
-    </section>
+      </section>
 
-    <section class="commitment">
-      <div class="commitment__inner">
-        <h2 class="commitment__title">キタガワワークスの<br>商品へのこだわり</h2>
-        <p class="commitment__text">
-          キタガワワークスの介護雑貨は、<br>
-          元介護士の実体験から生まれた、<br>
-          使う人にも介護する人にもやさしい<br>
-          アイテムです。<br>
-          毎日の暮らしに自然となじむシンプルで<br>
-          おしゃれなデザインは、<br>
-          性別や年齢を問わず幅広い方にご愛用<br>
-          いただいています。<br>
-          清潔に使える洗濯可能な仕様や、<br>
-          手に取りやすい価格帯も魅力のひとつ。<br>
-          「こんなのがほしかった」と感じて<br>
-          もらえるような、<br>
-          実用性と心地よさを兼ね備えた<br>
-          雑貨を揃えています。<br>
-          ここでは、そんなこだわりの介護雑貨<br>
-          たちの魅力を、<br>
-          ひとつひとつ丁寧にご紹介していきます。
-        </p>
-      </div>
-    </section>
-
-    <section class="customer-review">
-      <div class="customer-review__inner">
-        <div class="customer-review__heading">
-          <h2 class="customer-review__title">お客様の声</h2>
-          <span class="customer-review__subtitle">CUSTOMER REVIEWS</span>
+      <section class="about">
+        <picture>
+          <source srcset="./assets/image/urobag/sp_thumnail_urobbag.png" media="(max-width: 767px)">
+          <source srcset="./assets/image/urobag/hp_thumnail_urobbag.png" media="(min-width: 768px)">
+          <img src="./assets/image/urobag/hp_thumnail_urobbag.png" alt="ウローバッグ">
+        </picture>
+        <div class="about__inner">
+          <h2 class="about__title section__title">キタガワワークスの<br>
+            「ウローバッグ<br class="sp-only">
+            カバー」とは？</h2>
+          <p class="about__text text-area">
+            ウロバッグカバーとは、排尿障害や膀胱機能の低下でウロバッグ（導尿バッグ）を使用している人へ<br>
+            外出時の見た目や尿漏れ、臭いを気にせず過ごせるようにウロバッグに被せるカバーです。<br>
+            キタガワワークスでは、元介護士の経験から「介護する人」「される人」も使い勝手の良い設計で<br>
+            日常使いのしやすいおしゃれなウロバッグカバーを提案しています。
+          </p>
+          <a href="" class="about__button button">詳しくはこちら</a>
         </div>
-        <div class="customer-review__content">
-          <picture>
-            <source srcset="./assets/image/review/sp_review.png" media="(max-width: 767px)">
-            <source srcset="./assets/image/review/hp_review.png" media="(min-width: 768px)">
-            <img src="./assets/image/review/hp_review.png" alt="お客様の声">
-          </picture>
-        </div>
-      </div>
-    </section>
+      </section>
 
+      <section class="item-menu">
+        <div class="item-menu__inner">
+          <div class="item-menu__heading">
+            <h2 class="item-menu__title">商品一覧</h2>
+            <span class="item-menu__subtitle">ITEM MENU</span>
+          </div>
+          <ul class="item-menu__list">
+            <li class="item-menu__content">
+              <div class="item-menu__image">
+                <img src="./assets/image/itemmenu/all_icon.png" alt="">
+              </div>
+              <p class="item-menu__text">ALL</p>
+            </li>
+            <li class="item-menu__content">
+              <div class="item-menu__image">
+                <img src="./assets/image/itemmenu/urobag_icon.png" alt="">
+              </div>
+              <p class="item-menu__text">ウロバック</p>
+            </li>
+            <li class="item-menu__content">
+              <div class="item-menu__image">
+                <img src="./assets/image/itemmenu/towl_icon.png" alt="">
+              </div>
+              <p class="item-menu__text">車いすブランケット</p>
+            </li>
+            <li class="item-menu__content">
+              <div class="item-menu__image">
+                <img src="./assets/image/itemmenu/pants_icon.png" alt="">
+              </div>
+              <p class="item-menu__text">介護用パンツ</p>
+            </li>
+            <li class="item-menu__content">
+              <div class="item-menu__image">
+                <img src="./assets/image/itemmenu/ecobag_icon.png" alt="">
+              </div>
+              <p class="item-menu__text">エコバッグ・ポーチ</p>
+            </li>
+            <li class="item-menu__content">
+              <div class="item-menu__image">
+                <img src="./assets/image/itemmenu/kitchen_icon.png" alt="">
+              </div>
+              <p class="item-menu__text">キッチン用品</p>
+            </li>
+            <li class="item-menu__content">
+              <div class="item-menu__image">
+                <img src="./assets/image/itemmenu/kids_icon.png" alt="">
+              </div>
+              <p class="item-menu__text">子供用品</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="commitment">
+        <div class="commitment__inner">
+          <div class=""></div>
+          <div class="commitment__wrapper">
+
+            <h2 class="commitment__title section__title">キタガワワークスの<br>商品へのこだわり</h2>
+            <p class="commitment__text text-area">
+              キタガワワークスの介護雑貨は、<br class="sp-only">
+              元介護士の実体験から生まれた、<br>
+              使う人にも介護する人にもやさしい<br class="sp-only">
+              アイテムです。<br>
+              毎日の暮らしに自然となじむシンプルで<br class="sp-only">
+              おしゃれなデザインは、<br>
+              性別や年齢を問わず幅広い方にご愛用<br class="sp-only">
+              いただいています。<br>
+              清潔に使える洗濯可能な仕様や、<br class="sp-only">
+              手に取りやすい価格帯も魅力のひとつ。<br>
+              「こんなのがほしかった」と感じて<br class="sp-only">
+              もらえるような、<br>
+              実用性と心地よさを兼ね備えた<br class="sp-only">
+              雑貨を揃えています。<br>
+              ここでは、そんなこだわりの介護雑貨<br class="sp-only">
+              たちの魅力を、<br>
+              ひとつひとつ丁寧にご紹介していきます。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="customer-review">
+        <div class="customer-review__inner">
+          <div class="customer-review__heading">
+            <h2 class="customer-review__title">お客様の声</h2>
+            <span class="customer-review__subtitle">CUSTOMER REVIEWS</span>
+          </div>
+          <div class="customer-review__content">
+            <picture>
+              <source srcset="./assets/image/review/sp_review.png" media="(max-width: 767px)">
+              <source srcset="./assets/image/review/hp_review.png" media="(min-width: 768px)">
+              <img src="./assets/image/review/hp_review.png" alt="お客様の声">
+            </picture>
+          </div>
+        </div>
+      </section>
+    </div>
     <footer>
       <div class="footer__inner">
-        <a href="" class="footer__button button">よくある質問</a>
-        <a href="" class="footer__button button">お問い合わせ</a>
-        <a href="" class="footer__button button">instagram</a>
-        <small class="footer__copyright">(C)2025 kitagawa works</small>
+        <div class="footer__wrapper">
+          <a href="" class="footer__button button">よくある質問</a>
+          <a href="" class="footer__button button">お問い合わせ</a>
+          <a href="" class="footer__button button">instagram</a>
+        </div>
+        <p class="footer__copyright">(C)2025 kitagawa works</p>
       </div>
     </footer>
   </main>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+  <script src="./assets/js/script.js"></script>
 </body>
 
 </html>

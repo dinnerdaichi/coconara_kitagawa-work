@@ -56,6 +56,24 @@ a {
   color: $text-color;
 }
 
+.sp-only {
+  @include m.mq(pc) {
+    display: none;
+  }
+}
+
+.pc-only {
+  @include m.mq(sp) {
+    display: none;
+  }
+}
+
+.inner-pc {
+  @include m.mq(pc) {
+    padding: rclamp(100, 1920) rclamp(170, 1920);
+  }
+}
+
 // 画像
 picture img {
   width: 100%;
@@ -75,9 +93,36 @@ picture img {
   border-radius: 100vh;
   background-color: $yellow;
   transition: 0.5s;
+
+  @include m.mq(pc) {
+    padding: rclamp(13, 1920) rclamp(23, 1920);
+    font-size: rclamp(18, 1920);
+  }
 }
 
 .button:hover {}
+
+.section__title {
+  text-align: center;
+  font-size: vw-sp(25);
+  font-family: Noto Serif JP, serif;
+
+  @include m.mq(pc) {
+    font-size: rclamp(30, 1920);
+  }
+}
+
+.text-area {
+  margin-top: vw-sp(30);
+  text-align: center;
+  font-size: vw-sp(16);
+  line-height: 1.75;
+
+  @include m.mq(pc) {
+    margin-top: rclamp(30, 1920);
+    font-size: rclamp(18, 1920);
+  }
+}
 
 /* =============================================
 ヘッダー
@@ -88,6 +133,10 @@ header {
   height: vw-sp(90);
   background: #fff;
   z-index: 100;
+
+  @include m.mq(pc) {
+    height: rclamp(100, 1920);
+  }
 }
 
 .header__inner {
@@ -95,22 +144,40 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: vw-sp(15) vw-sp(16);
+
+  @include m.mq(pc) {
+    padding: rclamp(20, 1920) rclamp(60, 1920);
+  }
 }
 
 .header__logo {
   width: vw-sp(181);
   height: auto;
+
+  @include m.mq(pc) {
+    width: rclamp(244, 1920);
+    height: rclamp(85, 1920);
+  }
 }
 
 .header__wrapper {
   display: flex;
   align-items: center;
   column-gap: vw-sp(17);
+
+  @include m.mq(pc) {
+    flex-direction: row-reverse;
+  }
 }
 
 .header__icon {
   width: vw-sp(35);
   height: vw-sp(35);
+
+  @include m.mq(pc) {
+    width: rclamp(45, 1920);
+    height: rclamp(45, 1920);
+  }
 }
 
 /* ここから下がハンバーガーメニューに関するCSS */
@@ -131,6 +198,10 @@ header {
   z-index: 100;
   /* 重なり順を一番上にする */
   cursor: pointer;
+
+  @include m.mq(pc) {
+    display: none;
+  }
 }
 
 /* ハンバーガーメニューのアイコン */
@@ -144,6 +215,10 @@ header {
   background: #2f2f2f;
   transition: 0.5s;
   position: absolute;
+
+  @include m.mq(pc) {
+    display: none;
+  }
 }
 
 /* 三本線の一番上の棒の位置調整 */
@@ -183,6 +258,17 @@ header {
   z-index: 99;
   background: rgba(255, 255, 255, 0.7);
   transition: .5s;
+
+  @include m.mq(pc) {
+    position: static;
+    display: block;
+    width: auto;
+    height: auto;
+    background: transparent;
+    left: 0;
+    top: 0;
+    transition: none;
+  }
 }
 
 /* メニュー黒ポチを消す */
@@ -191,6 +277,13 @@ header {
   height: 100%;
   font-size: vw-sp(20);
   list-style: none;
+
+  @include m.mq(pc) {
+    display: flex;
+    column-gap: rclamp(27, 1920);
+    padding: unset;
+    font-size: rclamp(16, 1920);
+  }
 }
 
 .nav_item {
@@ -202,10 +295,30 @@ header {
     vertical-align: middle;
     background-color: $text-color;
   }
+
+  @include m.mq(pc) {
+    span {
+      display: none;
+    }
+  }
+}
+
+.header__button {
+  display: none;
+
+  @include m.mq(pc) {
+    display: block;
+    color: #fff;
+    background-color: $accent-blue;
+  }
 }
 
 .nav_item:not(:first-child) {
   margin-top: vw-sp(50);
+
+  @include m.mq(pc) {
+    margin-top: unset;
+  }
 }
 
 /* アイコンがクリックされたらメニューを表示 */
@@ -217,6 +330,10 @@ header {
 main {
   position: relative;
   top: vw-sp(90);
+
+  @include m.mq(pc) {
+    top: rclamp(100, 1920);
+  }
 }
 
 /* =============================================
@@ -228,42 +345,48 @@ main {
 
 .primary__inner {
   padding: vw-sp(30) vw-sp(22) vw-sp(60);
-  text-align: center;
+
+  @include m.mq(pc) {
+    padding: 0 rclamp(100, 1920) rclamp(60, 1920);
+  }
 }
 
 .primary__title {
-  font-size: vw-sp(25);
+  @include m.mq(pc) {
+    br {
+      display: none;
+    }
+  }
 }
 
-.primary__text {
-  margin-top: vw-sp(30);
-  font-size: vw-sp(16);
-  line-height: 1.75;
-}
+.primary__text {}
+
 
 /* =============================================
-元介護士による実体験に〜
+ウローバッグとは
 ============================================= */
 .about {
-  text-align: center;
+  picture img {
+    margin: 0 auto;
+    max-width: rclamp(803, 1920);
+  }
 }
 
 .about__inner {
   padding: vw-sp(60) vw-sp(32);
-}
 
-.about__title {
-  font-size: vw-sp(25);
-  font-family: Noto Serif JP, serif;
-}
-
-.about__text {
-  margin-top: vw-sp(30);
-  font-size: vw-sp(16);
+  @include m.mq(pc) {
+    padding: rclamp(60, 1920) rclamp(146, 1920) rclamp(100, 1920);
+  }
 }
 
 .about__button {
   margin-top: vw-sp(38);
+
+  @include m.mq(pc) {
+    width: rclamp(289, 1920);
+    margin: rclamp(60, 1920) auto;
+  }
 }
 
 /* =============================================
@@ -272,18 +395,34 @@ main {
 .item-menu {
   text-align: center;
   background-color: $light-blue;
+
+  @include m.mq(pc) {
+    margin-bottom: rclamp(100, 1920);
+  }
 }
 
 .item-menu__inner {
   padding: vw-sp(50) vw-sp(42);
+
+  @include m.mq(pc) {
+    padding: rclamp(60, 1920) rclamp(170, 1920);
+  }
 }
 
 .item-menu__title {
   font-size: vw-sp(30);
+
+  @include m.mq(pc) {
+    font-size: rclamp(30, 1920);
+  }
 }
 
 .item-menu__subtitle {
   font-size: vw-sp(16);
+
+  @include m.mq(pc) {
+    font-size: rclamp(16, 1920);
+  }
 }
 
 .item-menu__list {
@@ -292,37 +431,54 @@ main {
   grid-column-gap: vw-sp(35);
   grid-row-gap: vw-sp(20);
   margin-top: vw-sp(15);
+
+  @include m.mq(pc) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: rclamp(39, 1920);
+    grid-row-gap: rclamp(14, 1920);
+    margin: rclamp(5, 1920) auto;
+    max-width: rclamp(761, 1920);
+  }
+}
+
+.item-menu__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .item-menu__image {
   width: vw-sp(125);
   height: auto;
+
+  @include m.mq(pc) {
+    width: rclamp(161, 1920);
+  }
 }
 
 .item-menu__text {
   margin-top: vw-sp(5);
+
+  @include m.mq(pc) {
+    margin-top: rclamp(9, 1920);
+  }
 }
 
 /* =============================================
 商品へのこだわり
 ============================================= */
-.commitment {
-  text-align: center;
-}
-
 .commitment__inner {
   padding: vw-sp(60) vw-sp(14);
+
+  @include m.mq(pc) {
+    display: flex;
+    padding-block: rclamp(67, 1920) rclamp(132, 1920);
+  }
 }
 
 .commitment__title {
-  font-size: vw-sp(25);
   font-family: Noto Serif JP, serif;
-}
-
-.commitment__text {
-  margin-top: vw-sp(30);
-  font-size: vw-sp(16);
-  line-height: 1.75;
 }
 
 /* =============================================
@@ -335,18 +491,34 @@ main {
 
 .customer-review__inner {
   padding: vw-sp(60) vw-sp(20);
+
+  @include m.mq(pc) {
+    padding: rclamp(60, 1920) rclamp(50, 1920);
+  }
 }
 
 .customer-review__title {
   font-size: vw-sp(30);
+
+  @include m.mq(pc) {
+    font-size: rclamp(30, 1920);
+  }
 }
 
 .customer-review__subtitle {
   font-size: vw-sp(16);
+
+  @include m.mq(pc) {
+    font-size: rclamp(16, 1920);
+  }
 }
 
 .customer-review__content {
   margin-top: vw-sp(30);
+
+  @include m.mq(pc) {
+    margin-top: rclamp(39, 1920);
+  }
 }
 
 /* =============================================
@@ -359,16 +531,44 @@ footer {
 
 .footer__inner {
   padding: vw-sp(30) vw-sp(37);
+
+  @include m.mq(pc) {
+    padding: rclamp(56, 1920) rclamp(173, 1920);
+  }
+}
+
+.footer__wrapper {
+  @include m.mq(pc) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: rclamp(112, 1920);
+  }
 }
 
 .footer__button {
   margin-bottom: vw-sp(33);
+
+  @include m.mq(pc) {
+    margin-bottom: unset;
+    width: rclamp(300, 1920);
+  }
 }
 
 .footer__button+.footer__button {
   margin-top: vw-sp(30);
+
+  @include m.mq(pc) {
+    margin-top: unset;
+  }
 }
 
 .footer__copyright {
   color: #000;
+
+  @include m.mq(pc) {
+    margin-top: rclamp(58, 1920);
+    text-align: right;
+    font-size: rclamp(12, 1920);
+  }
 }
