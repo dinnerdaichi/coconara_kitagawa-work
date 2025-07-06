@@ -45,10 +45,19 @@ $light-blue: #e5f1f8;
 body {
   font-family: Noto Sans JP, serif;
   color: $text-color;
+  line-height: 1.6;
+
+  @include m.mq(sp) {
+    font-size: vw-sp(16);
+  }
+
+  @include m.mq(pc) {
+    font-size: rclamp(16, 1440);
+  }
 }
 
 p+p {
-  margin-top: vw-sp(5);
+  margin-top: vw-sp(8);
 
   @include m.mq(pc) {
     margin-top: rclamp(5, 1440);
@@ -59,7 +68,6 @@ a {
   text-decoration: none;
   color: $text-color;
 }
-
 
 
 .sp-only {
@@ -148,19 +156,10 @@ picture img {
   }
 }
 
-.heading__subtitle {
-  font-size: vw-sp(16);
-
-  @include m.mq(pc) {
-    font-size: rclamp(16, 1440);
-  }
-}
-
 .text-area {
   margin-top: vw-sp(30);
   text-align: center;
-  font-size: vw-sp(16);
-  line-height: 1.75;
+  line-height: 1.8;
 
   @include m.mq(pc) {
     margin-top: rclamp(30, 1440);
@@ -187,19 +186,20 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: vw-sp(15) vw-sp(16);
+  padding: vw-sp(16) vw-sp(24) vw-sp(16) vw-sp(16);
 
   @include m.mq(pc) {
-    padding: rclamp(20, 1440) rclamp(60, 1440);
+    padding: rclamp(8, 1440) rclamp(27, 1440) rclamp(8, 1440) rclamp(60, 1440);
     height: inherit;
   }
 }
 
 .header__logo {
-  width: vw-sp(181);
+  width: vw-sp(180);
   height: auto;
 
   @include m.mq(pc) {
+    flex-shrink: 0;
     width: rclamp(244, 1440);
     height: rclamp(85, 1440);
   }
@@ -212,6 +212,7 @@ header {
 
   @include m.mq(pc) {
     flex-direction: row-reverse;
+    column-gap: rclamp(17, 1440);
   }
 }
 
@@ -235,6 +236,7 @@ header {
 /* ハンバーガーアイコンの設置スペース */
 .drawer_open {
   display: flex;
+  margin-top: vw-sp(-5);
   height: vw-sp(30);
   width: vw-sp(30);
   justify-content: center;
@@ -429,7 +431,6 @@ footer {
 メイン
 ============================================= */
 main {
-  // position: relative;
   padding-top: vw-sp(90);
 
   @include m.mq(pc) {
@@ -510,22 +511,6 @@ main {
   }
 }
 
-.item-menu__title {
-  font-size: vw-sp(30);
-
-  @include m.mq(pc) {
-    font-size: rclamp(30, 1440);
-  }
-}
-
-.item-menu__subtitle {
-  font-size: vw-sp(16);
-
-  @include m.mq(pc) {
-    font-size: rclamp(16, 1440);
-  }
-}
-
 .item-menu__list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -573,8 +558,31 @@ main {
   padding: vw-sp(60) vw-sp(14);
 
   @include m.mq(pc) {
+    padding: unset;
+  }
+}
+
+.commitment-top__line {
+  @include m.mq(sp) {
+    display: none;
+  }
+}
+
+.commitment-top__content {
+  @include m.mq(pc) {
     display: flex;
-    padding-block: rclamp(67, 1440) rclamp(132, 1440);
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin-top: rclamp(67, 1440);
+  }
+}
+
+.commitment-top__wrapper {
+  margin-top: vw-sp(42);
+
+  @include m.mq(pc) {
+    width: 45%;
   }
 }
 
@@ -582,12 +590,61 @@ main {
   font-family: Noto Serif JP, serif;
 }
 
+.commitment-top__text {
+  margin-top: vw-sp(20);
+
+  @include m.mq(pc) {
+    margin-top: rclamp(31, 1440);
+  }
+}
+
+// スワイパー
+
+.commitment-top__swiper {
+  @include m.mq(pc) {
+    width: 45%;
+  }
+}
+
+.swiper-slide {
+  width: 100%;
+  height: vw-sp(300);
+
+  @include m.mq(pc) {
+    height: rclamp(300, 1440);
+  }
+}
+
+.slider-thumbnail {
+  margin-top: vw-sp(10);
+
+  .swiper-wrapper {
+    height: vw-sp(90);
+  }
+}
+
+.slider-thumbnail .swiper-slide {
+  opacity: .5;
+  transition: opacity .5s;
+  width: calc(100% / 3);
+}
+
+.slider-thumbnail .swiper-slide.swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+
+
 /* =============================================
 お客様の声
 ============================================= */
 .customer-review {
   text-align: center;
   background-color: $light-blue;
+
+  @include m.mq(pc) {
+    margin-top: rclamp(132, 1440);
+  }
 }
 
 .customer-review__inner {
@@ -595,22 +652,6 @@ main {
 
   @include m.mq(pc) {
     padding: rclamp(60, 1440) rclamp(50, 1440);
-  }
-}
-
-.customer-review__title {
-  font-size: vw-sp(30);
-
-  @include m.mq(pc) {
-    font-size: rclamp(30, 1440);
-  }
-}
-
-.customer-review__subtitle {
-  font-size: vw-sp(16);
-
-  @include m.mq(pc) {
-    font-size: rclamp(16, 1440);
   }
 }
 
@@ -696,12 +737,7 @@ main {
 
 .about__item-text {
   text-align: center;
-  font-size: vw-sp(16);
   font-weight: 500;
-
-  @include m.mq(pc) {
-    font-size: rclamp(16, 1440);
-  }
 }
 
 .about__text--bold {
@@ -828,13 +864,8 @@ main {
 }
 
 .step__text {
-  font-size: vw-sp(16);
   text-align: center;
   font-weight: 500;
-
-  @include m.mq(pc) {
-    font-size: rclamp(16, 1440);
-  }
 }
 
 /* =============================================
@@ -994,12 +1025,6 @@ TOPへ戻るボタン
   }
 }
 
-.item-menu__heading {
-  margin-top: vw-sp(60);
-}
-
-.item-menu__title {}
-
 .faq__list {
   display: grid;
   row-gap: vw-sp(30);
@@ -1094,14 +1119,13 @@ TOPへ戻るボタン
 
 }
 
-label {
+.contact__label {
   display: block;
   margin-bottom: vw-sp(21);
   font-size: vw-sp(20);
 
   @include m.mq(pc) {
     margin-bottom: rclamp(21, 1440);
-    font-size: rclamp(16, 1440);
   }
 }
 
@@ -1109,13 +1133,11 @@ input,
 textarea {
   width: 100%;
   padding: vw-sp(10);
-  font-size: vw-sp(16);
   background-color: #eeeeee;
   border: unset;
 
   @include m.mq(pc) {
     padding: rclamp(10, 1440);
-    font-size: rclamp(16, 1440);
   }
 }
 
