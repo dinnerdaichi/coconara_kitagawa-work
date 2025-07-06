@@ -19,9 +19,9 @@
 
 // 関数の使い方
 .test {
-  margin-top: rclamp(40, 1920);
+  margin-top: rclamp(40, 1440);
   // pcはrclamp関数つかう　1個目は値、2個目は縮めるのが始まる値、
-  // この場合、martgin-top:40pxで1920px以下から良い感じに縮む
+  // この場合、martgin-top:40pxで1440px以下から良い感じに縮む
 
   @include m.mq(sp) {
     // スマホ時はvw-sp関数を使う
@@ -56,6 +56,8 @@ a {
   color: $text-color;
 }
 
+
+
 .sp-only {
   @include m.mq(pc) {
     display: none;
@@ -70,7 +72,7 @@ a {
 
 .inner-pc {
   @include m.mq(pc) {
-    padding: rclamp(100, 1920) rclamp(170, 1920);
+    padding: rclamp(100, 1440) rclamp(170, 1440);
   }
 }
 
@@ -94,21 +96,35 @@ picture img {
   background-color: $yellow;
   transition: 0.5s;
 
+  @include m.mq(sp) {
+    margin: 0 auto;
+  }
+
   @include m.mq(pc) {
-    padding: rclamp(13, 1920) rclamp(23, 1920);
-    font-size: rclamp(18, 1920);
+    padding: rclamp(13, 1440) rclamp(23, 1440);
+    font-size: rclamp(18, 1440);
   }
 }
 
 .button:hover {}
 
+
+// section共通
+
+.section__inner {
+  @include m.mq(sp) {
+    margin-inline: vw-sp(16);
+  }
+}
+
 .section__title {
   text-align: center;
   font-size: vw-sp(25);
+  font-weight: 500;
   font-family: Noto Serif JP, serif;
 
   @include m.mq(pc) {
-    font-size: rclamp(30, 1920);
+    font-size: rclamp(30, 1440);
   }
 }
 
@@ -119,8 +135,8 @@ picture img {
   line-height: 1.75;
 
   @include m.mq(pc) {
-    margin-top: rclamp(30, 1920);
-    font-size: rclamp(18, 1920);
+    margin-top: rclamp(30, 1440);
+    font-size: rclamp(18, 1440);
   }
 }
 
@@ -135,7 +151,7 @@ header {
   z-index: 100;
 
   @include m.mq(pc) {
-    height: rclamp(100, 1920);
+    height: rclamp(100, 1440);
   }
 }
 
@@ -146,7 +162,8 @@ header {
   padding: vw-sp(15) vw-sp(16);
 
   @include m.mq(pc) {
-    padding: rclamp(20, 1920) rclamp(60, 1920);
+    padding: rclamp(20, 1440) rclamp(60, 1440);
+    height: inherit;
   }
 }
 
@@ -155,8 +172,8 @@ header {
   height: auto;
 
   @include m.mq(pc) {
-    width: rclamp(244, 1920);
-    height: rclamp(85, 1920);
+    width: rclamp(244, 1440);
+    height: rclamp(85, 1440);
   }
 }
 
@@ -175,8 +192,8 @@ header {
   height: vw-sp(35);
 
   @include m.mq(pc) {
-    width: rclamp(45, 1920);
-    height: rclamp(45, 1920);
+    width: rclamp(45, 1440);
+    height: rclamp(45, 1440);
   }
 }
 
@@ -280,9 +297,10 @@ header {
 
   @include m.mq(pc) {
     display: flex;
-    column-gap: rclamp(27, 1920);
+    align-items: center;
+    column-gap: rclamp(27, 1440);
     padding: unset;
-    font-size: rclamp(16, 1920);
+    font-size: rclamp(16, 1440);
   }
 }
 
@@ -327,12 +345,67 @@ header {
   /* メニューを画面に入れる */
 }
 
-main {
-  position: relative;
-  top: vw-sp(90);
+/* =============================================
+フッター
+============================================= */
+footer {
+  text-align: center;
+  background-color: $blue;
+}
+
+.footer__inner {
+  padding: vw-sp(30) vw-sp(37);
 
   @include m.mq(pc) {
-    top: rclamp(100, 1920);
+    padding: rclamp(56, 1440) rclamp(173, 1440);
+  }
+}
+
+.footer__wrapper {
+  @include m.mq(pc) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: rclamp(112, 1440);
+  }
+}
+
+.footer__button {
+  margin-bottom: vw-sp(33);
+
+  @include m.mq(pc) {
+    margin-bottom: unset;
+    width: rclamp(300, 1440);
+  }
+}
+
+.footer__button+.footer__button {
+  margin-top: vw-sp(30);
+
+  @include m.mq(pc) {
+    margin-top: unset;
+  }
+}
+
+.footer__copyright {
+  color: #000;
+
+  @include m.mq(pc) {
+    margin-top: rclamp(58, 1440);
+    text-align: right;
+    font-size: rclamp(12, 1440);
+  }
+}
+
+/* =============================================
+メイン
+============================================= */
+main {
+  // position: relative;
+  padding-top: vw-sp(90);
+
+  @include m.mq(pc) {
+    padding-top: rclamp(100, 1440);
   }
 }
 
@@ -347,7 +420,7 @@ main {
   padding: vw-sp(30) vw-sp(22) vw-sp(60);
 
   @include m.mq(pc) {
-    padding: 0 rclamp(100, 1920) rclamp(60, 1920);
+    padding: 0 rclamp(100, 1440) rclamp(60, 1440);
   }
 }
 
@@ -365,27 +438,27 @@ main {
 /* =============================================
 ウローバッグとは
 ============================================= */
-.about {
+.about-top {
   picture img {
     margin: 0 auto;
-    max-width: rclamp(803, 1920);
+    max-width: rclamp(803, 1440);
   }
 }
 
-.about__inner {
+.about-top__inner {
   padding: vw-sp(60) vw-sp(32);
 
   @include m.mq(pc) {
-    padding: rclamp(60, 1920) rclamp(146, 1920) rclamp(100, 1920);
+    padding: rclamp(60, 1440) rclamp(146, 1440) rclamp(100, 1440);
   }
 }
 
-.about__button {
+.about-top__button {
   margin-top: vw-sp(38);
 
   @include m.mq(pc) {
-    width: rclamp(289, 1920);
-    margin: rclamp(60, 1920) auto;
+    width: rclamp(289, 1440);
+    margin: rclamp(60, 1440) auto;
   }
 }
 
@@ -397,7 +470,7 @@ main {
   background-color: $light-blue;
 
   @include m.mq(pc) {
-    margin-bottom: rclamp(100, 1920);
+    margin-bottom: rclamp(100, 1440);
   }
 }
 
@@ -405,7 +478,7 @@ main {
   padding: vw-sp(50) vw-sp(42);
 
   @include m.mq(pc) {
-    padding: rclamp(60, 1920) rclamp(170, 1920);
+    padding: rclamp(60, 1440) rclamp(170, 1440);
   }
 }
 
@@ -413,7 +486,7 @@ main {
   font-size: vw-sp(30);
 
   @include m.mq(pc) {
-    font-size: rclamp(30, 1920);
+    font-size: rclamp(30, 1440);
   }
 }
 
@@ -421,7 +494,7 @@ main {
   font-size: vw-sp(16);
 
   @include m.mq(pc) {
-    font-size: rclamp(16, 1920);
+    font-size: rclamp(16, 1440);
   }
 }
 
@@ -435,10 +508,10 @@ main {
   @include m.mq(pc) {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: rclamp(39, 1920);
-    grid-row-gap: rclamp(14, 1920);
-    margin: rclamp(5, 1920) auto;
-    max-width: rclamp(761, 1920);
+    grid-column-gap: rclamp(39, 1440);
+    grid-row-gap: rclamp(14, 1440);
+    margin: rclamp(5, 1440) auto;
+    max-width: rclamp(761, 1440);
   }
 }
 
@@ -453,7 +526,7 @@ main {
   height: auto;
 
   @include m.mq(pc) {
-    width: rclamp(161, 1920);
+    width: rclamp(161, 1440);
   }
 }
 
@@ -461,7 +534,7 @@ main {
   margin-top: vw-sp(5);
 
   @include m.mq(pc) {
-    margin-top: rclamp(9, 1920);
+    margin-top: rclamp(9, 1440);
   }
 }
 
@@ -473,7 +546,7 @@ main {
 
   @include m.mq(pc) {
     display: flex;
-    padding-block: rclamp(67, 1920) rclamp(132, 1920);
+    padding-block: rclamp(67, 1440) rclamp(132, 1440);
   }
 }
 
@@ -493,7 +566,7 @@ main {
   padding: vw-sp(60) vw-sp(20);
 
   @include m.mq(pc) {
-    padding: rclamp(60, 1920) rclamp(50, 1920);
+    padding: rclamp(60, 1440) rclamp(50, 1440);
   }
 }
 
@@ -501,7 +574,7 @@ main {
   font-size: vw-sp(30);
 
   @include m.mq(pc) {
-    font-size: rclamp(30, 1920);
+    font-size: rclamp(30, 1440);
   }
 }
 
@@ -509,7 +582,7 @@ main {
   font-size: vw-sp(16);
 
   @include m.mq(pc) {
-    font-size: rclamp(16, 1920);
+    font-size: rclamp(16, 1440);
   }
 }
 
@@ -517,58 +590,151 @@ main {
   margin-top: vw-sp(30);
 
   @include m.mq(pc) {
-    margin-top: rclamp(39, 1920);
+    margin-top: rclamp(39, 1440);
   }
 }
 
 /* =============================================
-フッター
+2P ウロバッグカバーとは
 ============================================= */
-footer {
+
+.about {
+  margin-top: vw-sp(60);
+}
+
+.about__inner {
+  padding-inline: vw-sp(15);
+}
+
+.about__title {
+  color: $accent-blue;
+}
+
+.about__thumnail {
+  display: block;
+  margin-top: vw-sp(40);
+}
+
+.about__list {
+  display: grid;
+  row-gap: vw-sp(60);
+  margin-top: vw-sp(60);
+}
+
+.about__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: vw-sp(30);
+}
+
+.about__image {
+  width: vw-sp(179);
+  height: auto;
+}
+
+.about__item-text {
   text-align: center;
-  background-color: $blue;
+  font-size: vw-sp(16);
+  font-weight: 500;
 }
 
-.footer__inner {
-  padding: vw-sp(30) vw-sp(37);
-
-  @include m.mq(pc) {
-    padding: rclamp(56, 1920) rclamp(173, 1920);
-  }
+.about__text--bold {
+  font-weight: 500;
 }
 
-.footer__wrapper {
-  @include m.mq(pc) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    column-gap: rclamp(112, 1920);
-  }
+.about__button {
+  margin-top: vw-sp(60);
+  width: vw-sp(289);
+  color: #fff;
+  background-color: $accent-blue;
 }
 
-.footer__button {
-  margin-bottom: vw-sp(33);
+/* =============================================
+4ステップ
+============================================= */
 
-  @include m.mq(pc) {
-    margin-bottom: unset;
-    width: rclamp(300, 1920);
-  }
+.step {
+  padding-block: vw-sp(60);
+  margin-top: vw-sp(60);
+  background-color: $light-blue;
 }
 
-.footer__button+.footer__button {
+.step__inner {}
+
+.step__decoration {
+  margin: 0 auto;
+  width: vw-sp(176);
+  height: vw-sp(58);
+}
+
+.step__title {
+  margin-top: vw-sp(12);
+  text-align: center;
+  font-size: vw-sp(24);
+  color: $accent-blue;
+  font-weight: 350;
+}
+
+.step__list {
+  display: grid;
+  row-gap: vw-sp(30);
   margin-top: vw-sp(30);
+}
 
-  @include m.mq(pc) {
-    margin-top: unset;
+.step__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: vw-sp(20);
+}
+
+.step__order {
+  width: vw-sp(74);
+  height: vw-sp(56);
+
+  img {
+    object-fit: cover;
   }
 }
 
-.footer__copyright {
-  color: #000;
+.step__text {
+  font-size: vw-sp(16);
+  text-align: center;
+  font-weight: 500;
+}
 
-  @include m.mq(pc) {
-    margin-top: rclamp(58, 1920);
-    text-align: right;
-    font-size: rclamp(12, 1920);
-  }
+/* =============================================
+新タイプ
+============================================= */
+
+.new-type {
+  margin-top: vw-sp(60);
+  padding-bottom: vw-sp(60);
+}
+
+.new-type__inner {}
+
+.new-type__title {
+  text-align: center;
+  font-size: vw-sp(24);
+  font-weight: 350;
+}
+
+.new-type__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: vw-sp(24);
+  margin-top: vw-sp(30);
+}
+
+.new-type__arrow {
+  width: vw-sp(38);
+  height: vw-sp(35);
+}
+
+.new-type__button {
+  margin-top: vw-sp(60);
+  background-color: $light-blue;
 }

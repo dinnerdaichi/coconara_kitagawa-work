@@ -9,7 +9,7 @@
     * project
 *--------------------------------------*/
 .test {
-  margin-top: clamp(1rem, 2.0833333333vw, 2.5rem);
+  margin-top: clamp(1.3333333333rem, 2.7777777778vw, 2.5rem);
 }
 @media screen and (max-width:767px) {
   .test {
@@ -34,12 +34,6 @@ a {
   color: #4f4f4f;
 }
 
-@media screen and (max-width:767px) {
-  .inner {
-    padding-inline: 4.2666666667vw;
-  }
-}
-
 @media screen and (min-width:768px) {
   .sp-only {
     display: none;
@@ -54,7 +48,7 @@ a {
 
 @media screen and (min-width:768px) {
   .inner-pc {
-    padding: clamp(2.5rem, 5.2083333333vw, 6.25rem) clamp(4.25rem, 8.8541666667vw, 10.625rem);
+    padding: clamp(3.3333333333rem, 6.9444444444vw, 6.25rem) clamp(5.6666666667rem, 11.8055555556vw, 10.625rem);
   }
 }
 
@@ -76,21 +70,33 @@ picture img {
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
+@media screen and (max-width:767px) {
+  .button {
+    margin: 0 auto;
+  }
+}
 @media screen and (min-width:768px) {
   .button {
-    padding: clamp(0.325rem, 0.6770833333vw, 0.8125rem) clamp(0.575rem, 1.1979166667vw, 1.4375rem);
-    font-size: clamp(0.45rem, 0.9375vw, 1.125rem);
+    padding: clamp(0.4333333333rem, 0.9027777778vw, 0.8125rem) clamp(0.7666666667rem, 1.5972222222vw, 1.4375rem);
+    font-size: clamp(0.6rem, 1.25vw, 1.125rem);
+  }
+}
+
+@media screen and (max-width:767px) {
+  .section__inner {
+    margin-inline: 4.2666666667vw;
   }
 }
 
 .section__title {
   text-align: center;
   font-size: 6.6666666667vw;
+  font-weight: 500;
   font-family: Noto Serif JP, serif;
 }
 @media screen and (min-width:768px) {
   .section__title {
-    font-size: clamp(0.75rem, 1.5625vw, 1.875rem);
+    font-size: clamp(1rem, 2.0833333333vw, 1.875rem);
   }
 }
 
@@ -102,8 +108,8 @@ picture img {
 }
 @media screen and (min-width:768px) {
   .text-area {
-    margin-top: clamp(0.75rem, 1.5625vw, 1.875rem);
-    font-size: clamp(0.45rem, 0.9375vw, 1.125rem);
+    margin-top: clamp(1rem, 2.0833333333vw, 1.875rem);
+    font-size: clamp(0.6rem, 1.25vw, 1.125rem);
   }
 }
 
@@ -119,7 +125,7 @@ header {
 }
 @media screen and (min-width:768px) {
   header {
-    height: clamp(2.5rem, 5.2083333333vw, 6.25rem);
+    height: clamp(3.3333333333rem, 6.9444444444vw, 6.25rem);
   }
 }
 
@@ -137,7 +143,7 @@ header {
 }
 @media screen and (min-width:768px) {
   .header__inner {
-    padding: clamp(0.5rem, 1.0416666667vw, 1.25rem) clamp(1.5rem, 3.125vw, 3.75rem);
+    padding: clamp(0.6666666667rem, 1.3888888889vw, 1.25rem) clamp(2rem, 4.1666666667vw, 3.75rem);
     height: inherit;
   }
 }
@@ -148,8 +154,8 @@ header {
 }
 @media screen and (min-width:768px) {
   .header__logo {
-    width: clamp(6.1rem, 12.7083333333vw, 15.25rem);
-    height: clamp(2.125rem, 4.4270833333vw, 5.3125rem);
+    width: clamp(8.1333333333rem, 16.9444444444vw, 15.25rem);
+    height: clamp(2.8333333333rem, 5.9027777778vw, 5.3125rem);
   }
 }
 
@@ -179,8 +185,8 @@ header {
 }
 @media screen and (min-width:768px) {
   .header__icon {
-    width: clamp(1.125rem, 2.34375vw, 2.8125rem);
-    height: clamp(1.125rem, 2.34375vw, 2.8125rem);
+    width: clamp(1.5rem, 3.125vw, 2.8125rem);
+    height: clamp(1.5rem, 3.125vw, 2.8125rem);
   }
 }
 
@@ -305,11 +311,11 @@ header {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-column-gap: clamp(0.675rem, 1.40625vw, 1.6875rem);
-       -moz-column-gap: clamp(0.675rem, 1.40625vw, 1.6875rem);
-            column-gap: clamp(0.675rem, 1.40625vw, 1.6875rem);
+    -webkit-column-gap: clamp(0.9rem, 1.875vw, 1.6875rem);
+       -moz-column-gap: clamp(0.9rem, 1.875vw, 1.6875rem);
+            column-gap: clamp(0.9rem, 1.875vw, 1.6875rem);
     padding: unset;
-    font-size: clamp(0.4rem, 0.8333333333vw, 1rem);
+    font-size: clamp(0.5333333333rem, 1.1111111111vw, 1rem);
   }
 }
 
@@ -353,13 +359,79 @@ header {
   /* メニューを画面に入れる */
 }
 
+/* =============================================
+フッター
+============================================= */
+footer {
+  text-align: center;
+  background-color: #6e9fb9;
+}
+
+.footer__inner {
+  padding: 8vw 9.8666666667vw;
+}
+@media screen and (min-width:768px) {
+  .footer__inner {
+    padding: clamp(1.8666666667rem, 3.8888888889vw, 3.5rem) clamp(5.7666666667rem, 12.0138888889vw, 10.8125rem);
+  }
+}
+
+@media screen and (min-width:768px) {
+  .footer__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-column-gap: clamp(3.7333333333rem, 7.7777777778vw, 7rem);
+       -moz-column-gap: clamp(3.7333333333rem, 7.7777777778vw, 7rem);
+            column-gap: clamp(3.7333333333rem, 7.7777777778vw, 7rem);
+  }
+}
+
+.footer__button {
+  margin-bottom: 8.8vw;
+}
+@media screen and (min-width:768px) {
+  .footer__button {
+    margin-bottom: unset;
+    width: clamp(10rem, 20.8333333333vw, 18.75rem);
+  }
+}
+
+.footer__button + .footer__button {
+  margin-top: 8vw;
+}
+@media screen and (min-width:768px) {
+  .footer__button + .footer__button {
+    margin-top: unset;
+  }
+}
+
+.footer__copyright {
+  color: #000;
+}
+@media screen and (min-width:768px) {
+  .footer__copyright {
+    margin-top: clamp(1.9333333333rem, 4.0277777778vw, 3.625rem);
+    text-align: right;
+    font-size: clamp(0.4rem, 0.8333333333vw, 0.75rem);
+  }
+}
+
+/* =============================================
+メイン
+============================================= */
 main {
-  position: relative;
-  top: 24vw;
+  padding-top: 24vw;
 }
 @media screen and (min-width:768px) {
   main {
-    top: clamp(2.5rem, 5.2083333333vw, 6.25rem);
+    padding-top: clamp(3.3333333333rem, 6.9444444444vw, 6.25rem);
   }
 }
 
@@ -375,7 +447,7 @@ main {
 }
 @media screen and (min-width:768px) {
   .primary__inner {
-    padding: 0 clamp(2.5rem, 5.2083333333vw, 6.25rem) clamp(1.5rem, 3.125vw, 3.75rem);
+    padding: 0 clamp(3.3333333333rem, 6.9444444444vw, 6.25rem) clamp(2rem, 4.1666666667vw, 3.75rem);
   }
 }
 
@@ -390,7 +462,7 @@ main {
 ============================================= */
 .about-top picture img {
   margin: 0 auto;
-  max-width: clamp(20.075rem, 41.8229166667vw, 50.1875rem);
+  max-width: clamp(26.7666666667rem, 55.7638888889vw, 50.1875rem);
 }
 
 .about-top__inner {
@@ -398,7 +470,7 @@ main {
 }
 @media screen and (min-width:768px) {
   .about-top__inner {
-    padding: clamp(1.5rem, 3.125vw, 3.75rem) clamp(3.65rem, 7.6041666667vw, 9.125rem) clamp(2.5rem, 5.2083333333vw, 6.25rem);
+    padding: clamp(2rem, 4.1666666667vw, 3.75rem) clamp(4.8666666667rem, 10.1388888889vw, 9.125rem) clamp(3.3333333333rem, 6.9444444444vw, 6.25rem);
   }
 }
 
@@ -407,8 +479,8 @@ main {
 }
 @media screen and (min-width:768px) {
   .about-top__button {
-    width: clamp(7.225rem, 15.0520833333vw, 18.0625rem);
-    margin: clamp(1.5rem, 3.125vw, 3.75rem) auto;
+    width: clamp(9.6333333333rem, 20.0694444444vw, 18.0625rem);
+    margin: clamp(2rem, 4.1666666667vw, 3.75rem) auto;
   }
 }
 
@@ -421,7 +493,7 @@ main {
 }
 @media screen and (min-width:768px) {
   .item-menu {
-    margin-bottom: clamp(2.5rem, 5.2083333333vw, 6.25rem);
+    margin-bottom: clamp(3.3333333333rem, 6.9444444444vw, 6.25rem);
   }
 }
 
@@ -430,7 +502,7 @@ main {
 }
 @media screen and (min-width:768px) {
   .item-menu__inner {
-    padding: clamp(1.5rem, 3.125vw, 3.75rem) clamp(4.25rem, 8.8541666667vw, 10.625rem);
+    padding: clamp(2rem, 4.1666666667vw, 3.75rem) clamp(5.6666666667rem, 11.8055555556vw, 10.625rem);
   }
 }
 
@@ -439,7 +511,7 @@ main {
 }
 @media screen and (min-width:768px) {
   .item-menu__title {
-    font-size: clamp(0.75rem, 1.5625vw, 1.875rem);
+    font-size: clamp(1rem, 2.0833333333vw, 1.875rem);
   }
 }
 
@@ -448,7 +520,7 @@ main {
 }
 @media screen and (min-width:768px) {
   .item-menu__subtitle {
-    font-size: clamp(0.4rem, 0.8333333333vw, 1rem);
+    font-size: clamp(0.5333333333rem, 1.1111111111vw, 1rem);
   }
 }
 
@@ -463,10 +535,10 @@ main {
   .item-menu__list {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: clamp(0.975rem, 2.03125vw, 2.4375rem);
-    grid-row-gap: clamp(0.35rem, 0.7291666667vw, 0.875rem);
-    margin: clamp(0.125rem, 0.2604166667vw, 0.3125rem) auto;
-    max-width: clamp(19.025rem, 39.6354166667vw, 47.5625rem);
+    grid-column-gap: clamp(1.3rem, 2.7083333333vw, 2.4375rem);
+    grid-row-gap: clamp(0.4666666667rem, 0.9722222222vw, 0.875rem);
+    margin: clamp(0.1666666667rem, 0.3472222222vw, 0.3125rem) auto;
+    max-width: clamp(25.3666666667rem, 52.8472222222vw, 47.5625rem);
   }
 }
 
@@ -489,7 +561,7 @@ main {
 }
 @media screen and (min-width:768px) {
   .item-menu__image {
-    width: clamp(4.025rem, 8.3854166667vw, 10.0625rem);
+    width: clamp(5.3666666667rem, 11.1805555556vw, 10.0625rem);
   }
 }
 
@@ -498,7 +570,7 @@ main {
 }
 @media screen and (min-width:768px) {
   .item-menu__text {
-    margin-top: clamp(0.225rem, 0.46875vw, 0.5625rem);
+    margin-top: clamp(0.3rem, 0.625vw, 0.5625rem);
   }
 }
 
@@ -513,7 +585,7 @@ main {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding-block: clamp(1.675rem, 3.4895833333vw, 4.1875rem) clamp(3.3rem, 6.875vw, 8.25rem);
+    padding-block: clamp(2.2333333333rem, 4.6527777778vw, 4.1875rem) clamp(4.4rem, 9.1666666667vw, 8.25rem);
   }
 }
 
@@ -534,7 +606,7 @@ main {
 }
 @media screen and (min-width:768px) {
   .customer-review__inner {
-    padding: clamp(1.5rem, 3.125vw, 3.75rem) clamp(1.25rem, 2.6041666667vw, 3.125rem);
+    padding: clamp(2rem, 4.1666666667vw, 3.75rem) clamp(1.6666666667rem, 3.4722222222vw, 3.125rem);
   }
 }
 
@@ -543,7 +615,7 @@ main {
 }
 @media screen and (min-width:768px) {
   .customer-review__title {
-    font-size: clamp(0.75rem, 1.5625vw, 1.875rem);
+    font-size: clamp(1rem, 2.0833333333vw, 1.875rem);
   }
 }
 
@@ -552,7 +624,7 @@ main {
 }
 @media screen and (min-width:768px) {
   .customer-review__subtitle {
-    font-size: clamp(0.4rem, 0.8333333333vw, 1rem);
+    font-size: clamp(0.5333333333rem, 1.1111111111vw, 1rem);
   }
 }
 
@@ -561,70 +633,165 @@ main {
 }
 @media screen and (min-width:768px) {
   .customer-review__content {
-    margin-top: clamp(0.975rem, 2.03125vw, 2.4375rem);
+    margin-top: clamp(1.3rem, 2.7083333333vw, 2.4375rem);
   }
 }
 
 /* =============================================
-フッター
+2P ウロバッグカバーとは
 ============================================= */
-footer {
+.about {
+  margin-top: 16vw;
+}
+
+.about__inner {
+  padding-inline: 4vw;
+}
+
+.about__title {
+  color: #4596c3;
+}
+
+.about__thumnail {
+  display: block;
+  margin-top: 10.6666666667vw;
+}
+
+.about__list {
+  display: grid;
+  row-gap: 16vw;
+  margin-top: 16vw;
+}
+
+.about__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 8vw;
+}
+
+.about__image {
+  width: 47.7333333333vw;
+  height: auto;
+}
+
+.about__item-text {
   text-align: center;
-  background-color: #6e9fb9;
+  font-size: 4.2666666667vw;
+  font-weight: 500;
 }
 
-.footer__inner {
-  padding: 8vw 9.8666666667vw;
-}
-@media screen and (min-width:768px) {
-  .footer__inner {
-    padding: clamp(1.4rem, 2.9166666667vw, 3.5rem) clamp(4.325rem, 9.0104166667vw, 10.8125rem);
-  }
+.about__text--bold {
+  font-weight: 500;
 }
 
-@media screen and (min-width:768px) {
-  .footer__wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-column-gap: clamp(2.8rem, 5.8333333333vw, 7rem);
-       -moz-column-gap: clamp(2.8rem, 5.8333333333vw, 7rem);
-            column-gap: clamp(2.8rem, 5.8333333333vw, 7rem);
-  }
+.about__button {
+  margin-top: 16vw;
+  width: 77.0666666667vw;
+  color: #fff;
+  background-color: #4596c3;
 }
 
-.footer__button {
-  margin-bottom: 8.8vw;
-}
-@media screen and (min-width:768px) {
-  .footer__button {
-    margin-bottom: unset;
-    width: clamp(7.5rem, 15.625vw, 18.75rem);
-  }
+/* =============================================
+4ステップ
+============================================= */
+.step {
+  padding-block: 16vw;
+  margin-top: 16vw;
+  background-color: #e5f1f8;
 }
 
-.footer__button + .footer__button {
+.step__decoration {
+  margin: 0 auto;
+  width: 46.9333333333vw;
+  height: 15.4666666667vw;
+}
+
+.step__title {
+  margin-top: 3.2vw;
+  text-align: center;
+  font-size: 6.4vw;
+  color: #4596c3;
+  font-weight: 350;
+}
+
+.step__list {
+  display: grid;
+  row-gap: 8vw;
   margin-top: 8vw;
 }
-@media screen and (min-width:768px) {
-  .footer__button + .footer__button {
-    margin-top: unset;
-  }
+
+.step__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 5.3333333333vw;
 }
 
-.footer__copyright {
-  color: #000;
+.step__order {
+  width: 19.7333333333vw;
+  height: 14.9333333333vw;
 }
-@media screen and (min-width:768px) {
-  .footer__copyright {
-    margin-top: clamp(1.45rem, 3.0208333333vw, 3.625rem);
-    text-align: right;
-    font-size: clamp(0.3rem, 0.625vw, 0.75rem);
-  }
+.step__order img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.step__text {
+  font-size: 4.2666666667vw;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* =============================================
+新タイプ
+============================================= */
+.new-type {
+  margin-top: 16vw;
+  padding-bottom: 16vw;
+}
+
+.new-type__title {
+  text-align: center;
+  font-size: 6.4vw;
+  font-weight: 350;
+}
+
+.new-type__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 6.4vw;
+  margin-top: 8vw;
+}
+
+.new-type__arrow {
+  width: 10.1333333333vw;
+  height: 9.3333333333vw;
+}
+
+.new-type__button {
+  margin-top: 16vw;
+  background-color: #e5f1f8;
 }
