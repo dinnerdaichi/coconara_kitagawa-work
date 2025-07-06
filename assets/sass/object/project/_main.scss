@@ -136,6 +136,26 @@ picture img {
   }
 }
 
+.heading {
+  text-align: center;
+}
+
+.heading__title {
+  font-size: vw-sp(30);
+
+  @include m.mq(pc) {
+    font-size: rclamp(30, 1440);
+  }
+}
+
+.heading__subtitle {
+  font-size: vw-sp(16);
+
+  @include m.mq(pc) {
+    font-size: rclamp(16, 1440);
+  }
+}
+
 .text-area {
   margin-top: vw-sp(30);
   text-align: center;
@@ -957,5 +977,162 @@ TOPへ戻るボタン
     @include m.mq(pc) {
       margin-top: rclamp(30, 1440);
     }
+  }
+}
+
+/* =============================================
+よくある質問
+============================================= */
+
+.faq {
+  padding-block: vw-sp(60) vw-sp(100);
+  background-color: $light-blue;
+
+  @include m.mq(pc) {
+    padding: rclamp(100, 1440) rclamp(65, 1440);
+    margin-inline: rclamp(170, 1440);
+  }
+}
+
+.item-menu__heading {
+  margin-top: vw-sp(60);
+}
+
+.item-menu__title {}
+
+.faq__list {
+  display: grid;
+  row-gap: vw-sp(30);
+
+  @include m.mq(pc) {
+    margin-top: rclamp(60, 1440);
+    row-gap: rclamp(60, 1440);
+  }
+}
+
+.faq__item {
+  padding: vw-sp(30) vw-sp(22) vw-sp(42);
+  background-color: rgba(102, 136, 154, 0.15);
+
+  @include m.mq(pc) {
+    padding: rclamp(40, 1440) rclamp(47, 1440);
+  }
+}
+
+.faq__item--white {
+  background-color: #fff;
+}
+
+.faq__question {}
+
+.faq__question-title,
+.faq__answer-title {
+  font-size: vw-sp(20);
+  font-weight: 500;
+
+  span {
+    margin-right: vw-sp(10);
+    font-size: vw-sp(27);
+    font-family: Noto Serif JP, serif;
+    color: $accent-blue;
+  }
+
+  @include m.mq(pc) {
+    font-size: rclamp(20, 1440);
+
+    span {
+      margin-right: rclamp(10, 1440);
+      font-size: rclamp(27, 1440);
+    }
+  }
+}
+
+.faq__answer {
+  margin-top: vw-sp(24);
+
+  @include m.mq(pc) {
+    margin-top: rclamp(24, 1440);
+  }
+}
+
+.faq__answer-text-area {
+  margin-top: vw-sp(10);
+
+  @include m.mq(pc) {
+    margin-top: rclamp(12, 1440);
+  }
+}
+
+/* =============================================
+お問い合わせフォーム
+============================================= */
+.contact {
+  max-width: vw-sp(500);
+  margin: 0 auto;
+  padding-block: vw-sp(60);
+
+  @include m.mq(pc) {
+    max-width: rclamp(970, 1440);
+    padding-block: rclamp(90, 1440);
+  }
+}
+
+.form-group {
+  margin-top: vw-sp(40);
+
+  &:not(:first-of-type) {
+    margin-top: vw-sp(60);
+  }
+
+  @include m.mq(pc) {
+    margin-top: rclamp(60, 1440);
+
+    &:not(:first-of-type) {
+      margin-top: rclamp(60, 1440);
+    }
+  }
+
+}
+
+label {
+  display: block;
+  margin-bottom: vw-sp(21);
+  font-size: vw-sp(20);
+
+  @include m.mq(pc) {
+    margin-bottom: rclamp(21, 1440);
+    font-size: rclamp(16, 1440);
+  }
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: vw-sp(10);
+  font-size: vw-sp(16);
+  background-color: #eeeeee;
+  border: unset;
+
+  @include m.mq(pc) {
+    padding: rclamp(10, 1440);
+    font-size: rclamp(16, 1440);
+  }
+}
+
+.contact__button {
+  margin-top: vw-sp(47);
+  width: 100%;
+  max-width: vw-sp(400);
+  background-color: $light-blue;
+  color: $text-color;
+  padding: vw-sp(16) vw-sp(35);
+  border: unset;
+  border-radius: unset;
+  cursor: pointer;
+
+  @include m.mq(pc) {
+    margin: rclamp(60, 1440) auto;
+    width: rclamp(300, 1440);
+    padding: rclamp(16, 1440);
   }
 }

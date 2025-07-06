@@ -110,6 +110,28 @@ picture img {
   }
 }
 
+.heading {
+  text-align: center;
+}
+
+.heading__title {
+  font-size: 8vw;
+}
+@media screen and (min-width:768px) {
+  .heading__title {
+    font-size: clamp(1rem, 2.0833333333vw, 1.875rem);
+  }
+}
+
+.heading__subtitle {
+  font-size: 4.2666666667vw;
+}
+@media screen and (min-width:768px) {
+  .heading__subtitle {
+    font-size: clamp(0.5333333333rem, 1.1111111111vw, 1rem);
+  }
+}
+
 .text-area {
   margin-top: 8vw;
   text-align: center;
@@ -1073,5 +1095,167 @@ TOPへ戻るボタン
 @media screen and (min-width:768px) {
   .commitment__text-area p + p {
     margin-top: clamp(1rem, 2.0833333333vw, 1.875rem);
+  }
+}
+
+/* =============================================
+よくある質問
+============================================= */
+.faq {
+  padding-block: 16vw 26.6666666667vw;
+  background-color: #e5f1f8;
+}
+@media screen and (min-width:768px) {
+  .faq {
+    padding: clamp(3.3333333333rem, 6.9444444444vw, 6.25rem) clamp(2.1666666667rem, 4.5138888889vw, 4.0625rem);
+    margin-inline: clamp(5.6666666667rem, 11.8055555556vw, 10.625rem);
+  }
+}
+
+.item-menu__heading {
+  margin-top: 16vw;
+}
+
+.faq__list {
+  display: grid;
+  row-gap: 8vw;
+}
+@media screen and (min-width:768px) {
+  .faq__list {
+    margin-top: clamp(2rem, 4.1666666667vw, 3.75rem);
+    row-gap: clamp(2rem, 4.1666666667vw, 3.75rem);
+  }
+}
+
+.faq__item {
+  padding: 8vw 5.8666666667vw 11.2vw;
+  background-color: rgba(102, 136, 154, 0.15);
+}
+@media screen and (min-width:768px) {
+  .faq__item {
+    padding: clamp(1.3333333333rem, 2.7777777778vw, 2.5rem) clamp(1.5666666667rem, 3.2638888889vw, 2.9375rem);
+  }
+}
+
+.faq__item--white {
+  background-color: #fff;
+}
+
+.faq__question-title,
+.faq__answer-title {
+  font-size: 5.3333333333vw;
+  font-weight: 500;
+}
+.faq__question-title span,
+.faq__answer-title span {
+  margin-right: 2.6666666667vw;
+  font-size: 7.2vw;
+  font-family: Noto Serif JP, serif;
+  color: #4596c3;
+}
+@media screen and (min-width:768px) {
+  .faq__question-title,
+  .faq__answer-title {
+    font-size: clamp(0.6666666667rem, 1.3888888889vw, 1.25rem);
+  }
+  .faq__question-title span,
+  .faq__answer-title span {
+    margin-right: clamp(0.3333333333rem, 0.6944444444vw, 0.625rem);
+    font-size: clamp(0.9rem, 1.875vw, 1.6875rem);
+  }
+}
+
+.faq__answer {
+  margin-top: 6.4vw;
+}
+@media screen and (min-width:768px) {
+  .faq__answer {
+    margin-top: clamp(0.8rem, 1.6666666667vw, 1.5rem);
+  }
+}
+
+.faq__answer-text-area {
+  margin-top: 2.6666666667vw;
+}
+@media screen and (min-width:768px) {
+  .faq__answer-text-area {
+    margin-top: clamp(0.4rem, 0.8333333333vw, 0.75rem);
+  }
+}
+
+/* =============================================
+お問い合わせフォーム
+============================================= */
+.contact {
+  max-width: 133.3333333333vw;
+  margin: 0 auto;
+  padding-block: 16vw;
+}
+@media screen and (min-width:768px) {
+  .contact {
+    max-width: clamp(32.3333333333rem, 67.3611111111vw, 60.625rem);
+    padding-block: clamp(3rem, 6.25vw, 5.625rem);
+  }
+}
+
+.form-group {
+  margin-top: 10.6666666667vw;
+}
+.form-group:not(:first-of-type) {
+  margin-top: 16vw;
+}
+@media screen and (min-width:768px) {
+  .form-group {
+    margin-top: clamp(2rem, 4.1666666667vw, 3.75rem);
+  }
+  .form-group:not(:first-of-type) {
+    margin-top: clamp(2rem, 4.1666666667vw, 3.75rem);
+  }
+}
+
+label {
+  display: block;
+  margin-bottom: 5.6vw;
+  font-size: 5.3333333333vw;
+}
+@media screen and (min-width:768px) {
+  label {
+    margin-bottom: clamp(0.7rem, 1.4583333333vw, 1.3125rem);
+    font-size: clamp(0.5333333333rem, 1.1111111111vw, 1rem);
+  }
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 2.6666666667vw;
+  font-size: 4.2666666667vw;
+  background-color: #eeeeee;
+  border: unset;
+}
+@media screen and (min-width:768px) {
+  input,
+  textarea {
+    padding: clamp(0.3333333333rem, 0.6944444444vw, 0.625rem);
+    font-size: clamp(0.5333333333rem, 1.1111111111vw, 1rem);
+  }
+}
+
+.contact__button {
+  margin-top: 12.5333333333vw;
+  width: 100%;
+  max-width: 106.6666666667vw;
+  background-color: #e5f1f8;
+  color: #4f4f4f;
+  padding: 4.2666666667vw 9.3333333333vw;
+  border: unset;
+  border-radius: unset;
+  cursor: pointer;
+}
+@media screen and (min-width:768px) {
+  .contact__button {
+    margin: clamp(2rem, 4.1666666667vw, 3.75rem) auto;
+    width: clamp(10rem, 20.8333333333vw, 18.75rem);
+    padding: clamp(0.5333333333rem, 1.1111111111vw, 1rem);
   }
 }
