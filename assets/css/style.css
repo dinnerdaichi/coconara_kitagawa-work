@@ -1244,6 +1244,10 @@ TOPへ戻るボタン
   }
 }
 
+.contact__inner {
+  padding: 4.5333333333vw;
+}
+
 .form-group {
   margin-top: 10.6666666667vw;
 }
@@ -1267,6 +1271,7 @@ TOPへ戻るボタン
 @media screen and (min-width:768px) {
   .contact__label {
     margin-bottom: clamp(0.7rem, 1.4583333333vw, 1.3125rem);
+    font-size: clamp(0.5333333333rem, 1.1111111111vw, 1rem);
   }
 }
 

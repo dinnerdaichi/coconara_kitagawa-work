@@ -1107,6 +1107,10 @@ TOPへ戻るボタン
   }
 }
 
+.contact__inner {
+  padding: vw-sp(17);
+}
+
 .form-group {
   margin-top: vw-sp(40);
 
@@ -1131,6 +1135,7 @@ TOPへ戻るボタン
 
   @include m.mq(pc) {
     margin-bottom: rclamp(21, 1440);
+    font-size: rclamp(16, 1440);
   }
 }
 
