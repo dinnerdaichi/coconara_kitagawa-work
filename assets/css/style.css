@@ -24,6 +24,7 @@ body {
   font-family: Noto Sans JP, serif;
   color: #4f4f4f;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 @media screen and (max-width:767px) {
   body {
@@ -142,7 +143,6 @@ picture img {
 @media screen and (min-width:768px) {
   .text-area {
     margin-top: clamp(1rem, 2.0833333333vw, 1.875rem);
-    font-size: clamp(0.6rem, 1.25vw, 1.125rem);
   }
 }
 
@@ -172,7 +172,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 4.2666666667vw 6.4vw 4.2666666667vw 4.2666666667vw;
+  padding: 4.2666666667vw;
 }
 @media screen and (min-width:768px) {
   .header__inner {
@@ -478,38 +478,61 @@ main {
 プライマリー
 ============================================= */
 .primary {
+  margin-top: 8vw;
   font-family: Noto Serif JP, serif;
+}
+@media screen and (min-width:768px) {
+  .primary {
+    margin-top: clamp(3.3333333333rem, 6.9444444444vw, 6.25rem);
+  }
 }
 
 .primary__inner {
-  padding: 8vw 5.8666666667vw 16vw;
+  margin-inline: 5.8666666667vw;
 }
 @media screen and (min-width:768px) {
   .primary__inner {
-    padding: 0 clamp(3.3333333333rem, 6.9444444444vw, 6.25rem) clamp(2rem, 4.1666666667vw, 3.75rem);
+    margin-inline: clamp(5.6666666667rem, 11.8055555556vw, 10.625rem);
   }
 }
 
 @media screen and (min-width:768px) {
-  .primary__title br {
-    display: none;
+  .primary__title {
+    font-weight: 400;
   }
 }
 
 /* =============================================
 ウローバッグとは
 ============================================= */
+.about-top {
+  margin-top: 16vw;
+}
 .about-top picture img {
   margin: 0 auto;
   max-width: clamp(26.7666666667rem, 55.7638888889vw, 50.1875rem);
 }
+@media screen and (min-width:768px) {
+  .about-top {
+    margin-top: clamp(3.3333333333rem, 6.9444444444vw, 6.25rem);
+  }
+}
 
 .about-top__inner {
-  padding: 16vw 8.5333333333vw;
+  margin-inline: 8.5333333333vw;
 }
 @media screen and (min-width:768px) {
   .about-top__inner {
-    padding: clamp(2rem, 4.1666666667vw, 3.75rem) clamp(4.8666666667rem, 10.1388888889vw, 9.125rem) clamp(3.3333333333rem, 6.9444444444vw, 6.25rem);
+    margin-inline: clamp(5.6666666667rem, 11.8055555556vw, 10.625rem);
+  }
+}
+
+.about-top__title {
+  margin-top: 16vw;
+}
+@media screen and (min-width:768px) {
+  .about-top__title {
+    margin-top: clamp(2rem, 4.1666666667vw, 3.75rem);
   }
 }
 
@@ -531,12 +554,13 @@ main {
 商品一覧
 ============================================= */
 .item-menu {
+  margin-top: 16vw;
   text-align: center;
   background-color: #e5f1f8;
 }
 @media screen and (min-width:768px) {
   .item-menu {
-    margin-bottom: clamp(3.3333333333rem, 6.9444444444vw, 6.25rem);
+    margin: clamp(3.3333333333rem, 6.9444444444vw, 6.25rem) clamp(5.6666666667rem, 11.8055555556vw, 10.625rem) 0;
   }
 }
 
@@ -610,12 +634,13 @@ main {
 /* =============================================
 商品へのこだわり
 ============================================= */
-.commitment-top__inner {
-  padding: 16vw 3.7333333333vw;
+.commitment-top {
+  margin-top: 16vw;
+  margin-inline: 3.7333333333vw;
 }
 @media screen and (min-width:768px) {
-  .commitment-top__inner {
-    padding: unset;
+  .commitment-top {
+    margin: clamp(3.3333333333rem, 6.9444444444vw, 6.25rem) clamp(5.6666666667rem, 11.8055555556vw, 10.625rem);
   }
 }
 
@@ -649,6 +674,7 @@ main {
 }
 @media screen and (min-width:768px) {
   .commitment-top__wrapper {
+    margin-top: unset;
     width: 45%;
   }
 }
@@ -704,12 +730,13 @@ main {
 お客様の声
 ============================================= */
 .customer-review {
+  margin-top: 16vw;
   text-align: center;
   background-color: #e5f1f8;
 }
 @media screen and (min-width:768px) {
   .customer-review {
-    margin-top: clamp(4.4rem, 9.1666666667vw, 8.25rem);
+    margin: clamp(4.4rem, 9.1666666667vw, 8.25rem) clamp(5.6666666667rem, 11.8055555556vw, 10.625rem) clamp(3.3333333333rem, 6.9444444444vw, 6.25rem);
   }
 }
 
@@ -1165,6 +1192,7 @@ TOPへ戻るボタン
 .faq__list {
   display: grid;
   row-gap: 8vw;
+  margin-top: 8vw;
 }
 @media screen and (min-width:768px) {
   .faq__list {

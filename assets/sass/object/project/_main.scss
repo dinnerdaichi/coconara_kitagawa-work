@@ -46,6 +46,7 @@ body {
   font-family: Noto Sans JP, serif;
   color: $text-color;
   line-height: 1.6;
+  overflow-x: hidden;
 
   @include m.mq(sp) {
     font-size: vw-sp(16);
@@ -163,7 +164,6 @@ picture img {
 
   @include m.mq(pc) {
     margin-top: rclamp(30, 1440);
-    font-size: rclamp(18, 1440);
   }
 }
 
@@ -186,7 +186,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: vw-sp(16) vw-sp(24) vw-sp(16) vw-sp(16);
+  padding: vw-sp(16);
 
   @include m.mq(pc) {
     padding: rclamp(8, 1440) rclamp(27, 1440) rclamp(8, 1440) rclamp(60, 1440);
@@ -442,43 +442,57 @@ main {
 プライマリー
 ============================================= */
 .primary {
+  margin-top: vw-sp(30);
   font-family: Noto Serif JP, serif;
+
+  @include m.mq(pc) {
+    margin-top: rclamp(100, 1440);
+  }
 }
 
 .primary__inner {
-  padding: vw-sp(30) vw-sp(22) vw-sp(60);
+  margin-inline: vw-sp(22);
 
   @include m.mq(pc) {
-    padding: 0 rclamp(100, 1440) rclamp(60, 1440);
+    margin-inline: rclamp(170, 1440);
   }
 }
 
 .primary__title {
   @include m.mq(pc) {
-    br {
-      display: none;
-    }
+    font-weight: 400;
   }
 }
-
-.primary__text {}
-
 
 /* =============================================
 ウローバッグとは
 ============================================= */
 .about-top {
+  margin-top: vw-sp(60);
+
   picture img {
     margin: 0 auto;
     max-width: rclamp(803, 1440);
   }
+
+  @include m.mq(pc) {
+    margin-top: rclamp(100, 1440);
+  }
 }
 
 .about-top__inner {
-  padding: vw-sp(60) vw-sp(32);
+  margin-inline: vw-sp(32);
 
   @include m.mq(pc) {
-    padding: rclamp(60, 1440) rclamp(146, 1440) rclamp(100, 1440);
+    margin-inline: rclamp(170, 1440);
+  }
+}
+
+.about-top__title {
+  margin-top: vw-sp(60);
+
+  @include m.mq(pc) {
+    margin-top: rclamp(60, 1440);
   }
 }
 
@@ -499,11 +513,12 @@ main {
 商品一覧
 ============================================= */
 .item-menu {
+  margin-top: vw-sp(60);
   text-align: center;
   background-color: $light-blue;
 
   @include m.mq(pc) {
-    margin-bottom: rclamp(100, 1440);
+    margin: rclamp(100, 1440) rclamp(170, 1440) 0;
   }
 }
 
@@ -559,11 +574,12 @@ main {
 /* =============================================
 商品へのこだわり
 ============================================= */
-.commitment-top__inner {
-  padding: vw-sp(60) vw-sp(14);
+.commitment-top {
+  margin-top: vw-sp(60);
+  margin-inline: vw-sp(14);
 
   @include m.mq(pc) {
-    padding: unset;
+    margin: rclamp(100, 1440) rclamp(170, 1440);
   }
 }
 
@@ -587,6 +603,7 @@ main {
   margin-top: vw-sp(42);
 
   @include m.mq(pc) {
+    margin-top: unset;
     width: 45%;
   }
 }
@@ -644,11 +661,12 @@ main {
 お客様の声
 ============================================= */
 .customer-review {
+  margin-top: vw-sp(60);
   text-align: center;
   background-color: $light-blue;
 
   @include m.mq(pc) {
-    margin-top: rclamp(132, 1440);
+    margin: rclamp(132, 1440) rclamp(170, 1440) rclamp(100, 1440);
   }
 }
 
@@ -1033,6 +1051,7 @@ TOPへ戻るボタン
 .faq__list {
   display: grid;
   row-gap: vw-sp(30);
+  margin-top: vw-sp(30);
 
   @include m.mq(pc) {
     margin-top: rclamp(60, 1440);
@@ -1052,8 +1071,6 @@ TOPへ戻るボタン
 .faq__item--white {
   background-color: #fff;
 }
-
-.faq__question {}
 
 .faq__question-title,
 .faq__answer-title {
