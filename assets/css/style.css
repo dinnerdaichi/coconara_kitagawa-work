@@ -587,11 +587,11 @@ main {
 /* =============================================
 商品へのこだわり
 ============================================= */
-.commitment__inner {
+.commitment-top__inner {
   padding: 16vw 3.7333333333vw;
 }
 @media screen and (min-width:768px) {
-  .commitment__inner {
+  .commitment-top__inner {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -599,7 +599,7 @@ main {
   }
 }
 
-.commitment__title {
+.commitment-top__title {
   font-family: Noto Serif JP, serif;
 }
 
@@ -904,7 +904,6 @@ main {
 ============================================= */
 .step__new-type {
   padding-top: 16vw;
-  padding-bottom: 16vw;
   background-color: #fff;
 }
 @media screen and (min-width:768px) {
@@ -976,8 +975,11 @@ main {
   }
 }
 
+/* =============================================
+TOPへ戻るボタン
+============================================= */
 .about-button {
-  margin-bottom: 16vw;
+  margin-block: 16vw;
   width: 77.0666666667vw;
   background-color: #e5f1f8;
 }
@@ -985,5 +987,91 @@ main {
   .about-button {
     margin: clamp(2rem, 4.1666666667vw, 3.75rem) auto;
     width: clamp(9.6333333333rem, 20.0694444444vw, 18.0625rem);
+  }
+}
+
+/* =============================================
+こだわりのアイテム
+============================================= */
+.commitment {
+  margin-top: 16vw;
+}
+@media screen and (min-width:768px) {
+  .commitment {
+    margin-top: clamp(3.3333333333rem, 6.9444444444vw, 6.25rem);
+  }
+}
+
+.commitment__title {
+  color: #4596c3;
+}
+
+.commitment__line {
+  margin-top: 8vw;
+}
+@media screen and (min-width:768px) {
+  .commitment__line {
+    margin-top: clamp(2rem, 4.1666666667vw, 3.75rem);
+  }
+}
+
+@media screen and (min-width:768px) {
+  .commitment__line--reverse {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+
+.commitment__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 8vw;
+  margin-top: 8vw;
+}
+@media screen and (min-width:768px) {
+  .commitment__wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-column-gap: clamp(1.3333333333rem, 2.7777777778vw, 2.5rem);
+       -moz-column-gap: clamp(1.3333333333rem, 2.7777777778vw, 2.5rem);
+            column-gap: clamp(1.3333333333rem, 2.7777777778vw, 2.5rem);
+    margin-top: clamp(2rem, 4.1666666667vw, 3.75rem);
+  }
+}
+
+.commitment__subtitle {
+  margin-top: 8vw;
+  text-align: center;
+  font-size: 6.4vw;
+}
+@media screen and (min-width:768px) {
+  .commitment__subtitle {
+    margin-top: clamp(2rem, 4.1666666667vw, 3.75rem);
+    font-size: clamp(1rem, 2.0833333333vw, 1.875rem);
+  }
+}
+
+.commitment__text-area {
+  padding-inline: 1.8666666667vw;
+}
+.commitment__text-area p + p {
+  margin-top: 8vw;
+}
+@media screen and (min-width:768px) {
+  .commitment__text-area p + p {
+    margin-top: clamp(1rem, 2.0833333333vw, 1.875rem);
   }
 }
