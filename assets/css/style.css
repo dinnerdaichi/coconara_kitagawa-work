@@ -28,6 +28,11 @@ body {
 p + p {
   margin-top: 1.3333333333vw;
 }
+@media screen and (min-width:768px) {
+  p + p {
+    margin-top: clamp(0.1666666667rem, 0.3472222222vw, 0.3125rem);
+  }
+}
 
 a {
   text-decoration: none;
@@ -85,6 +90,11 @@ picture img {
 @media screen and (max-width:767px) {
   .section__inner {
     margin-inline: 4.2666666667vw;
+  }
+}
+@media screen and (min-width:768px) {
+  .section__inner {
+    margin-inline: clamp(5.6666666667rem, 11.8055555556vw, 10.625rem);
   }
 }
 
@@ -643,24 +653,55 @@ main {
 .about {
   margin-top: 16vw;
 }
-
-.about__inner {
-  padding-inline: 4vw;
+@media screen and (min-width:768px) {
+  .about {
+    margin-top: clamp(3.3333333333rem, 6.9444444444vw, 6.25rem);
+  }
 }
 
 .about__title {
   color: #4596c3;
+}
+@media screen and (min-width:768px) {
+  .about__title {
+    font-size: clamp(1.1666666667rem, 2.4305555556vw, 2.1875rem);
+    font-weight: clamp(20rem, 41.6666666667vw, 37.5rem);
+  }
 }
 
 .about__thumnail {
   display: block;
   margin-top: 10.6666666667vw;
 }
+@media screen and (min-width:768px) {
+  .about__thumnail {
+    margin: clamp(2rem, 4.1666666667vw, 3.75rem) clamp(8.6666666667rem, 18.0555555556vw, 16.25rem);
+  }
+}
+
+.about__inner {
+  padding-inline: 4vw;
+}
+
+@media screen and (min-width:768px) {
+  .about__text-area {
+    margin-top: clamp(2rem, 4.1666666667vw, 3.75rem);
+  }
+}
 
 .about__list {
   display: grid;
   row-gap: 16vw;
   margin-top: 16vw;
+}
+@media screen and (min-width:768px) {
+  .about__list {
+    grid-template-columns: repeat(3, 1fr);
+    -webkit-column-gap: clamp(4.3333333333rem, 9.0277777778vw, 8.125rem);
+       -moz-column-gap: clamp(4.3333333333rem, 9.0277777778vw, 8.125rem);
+            column-gap: clamp(4.3333333333rem, 9.0277777778vw, 8.125rem);
+    margin-top: clamp(2rem, 4.1666666667vw, 3.75rem);
+  }
 }
 
 .about__item {
@@ -676,16 +717,31 @@ main {
           align-items: center;
   row-gap: 8vw;
 }
+@media screen and (min-width:768px) {
+  .about__item {
+    row-gap: clamp(0.4rem, 0.8333333333vw, 0.75rem);
+  }
+}
 
 .about__image {
   width: 47.7333333333vw;
   height: auto;
+}
+@media screen and (min-width:768px) {
+  .about__image {
+    width: clamp(8rem, 16.6666666667vw, 15rem);
+  }
 }
 
 .about__item-text {
   text-align: center;
   font-size: 4.2666666667vw;
   font-weight: 500;
+}
+@media screen and (min-width:768px) {
+  .about__item-text {
+    font-size: clamp(0.5333333333rem, 1.1111111111vw, 1rem);
+  }
 }
 
 .about__text--bold {
@@ -698,20 +754,63 @@ main {
   color: #fff;
   background-color: #4596c3;
 }
+@media screen and (min-width:768px) {
+  .about__button {
+    margin: clamp(2rem, 4.1666666667vw, 3.75rem) auto;
+    width: clamp(10rem, 20.8333333333vw, 18.75rem);
+  }
+}
 
 /* =============================================
 4ステップ
 ============================================= */
 .step {
-  padding-block: 16vw;
   margin-top: 16vw;
   background-color: #e5f1f8;
+}
+@media screen and (min-width:768px) {
+  .step {
+    padding-block: clamp(2rem, 4.1666666667vw, 3.75rem);
+    margin: clamp(3.3333333333rem, 6.9444444444vw, 6.25rem) clamp(5.6666666667rem, 11.8055555556vw, 10.625rem);
+    background-color: #e5f1f8;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .step__bg {
+    padding-block: 16vw;
+    background-color: #e5f1f8;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .step__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-column-gap: clamp(0.2666666667rem, 0.5555555556vw, 0.5rem);
+       -moz-column-gap: clamp(0.2666666667rem, 0.5555555556vw, 0.5rem);
+            column-gap: clamp(0.2666666667rem, 0.5555555556vw, 0.5rem);
+  }
 }
 
 .step__decoration {
   margin: 0 auto;
   width: 46.9333333333vw;
   height: 15.4666666667vw;
+}
+@media screen and (min-width:768px) {
+  .step__decoration {
+    margin: unset;
+    width: clamp(5.4666666667rem, 11.3888888889vw, 10.25rem);
+    height: clamp(1.8rem, 3.75vw, 3.375rem);
+  }
 }
 
 .step__title {
@@ -721,11 +820,28 @@ main {
   color: #4596c3;
   font-weight: 350;
 }
+@media screen and (min-width:768px) {
+  .step__title {
+    margin-top: unset;
+    font-size: clamp(1rem, 2.0833333333vw, 1.875rem);
+    font-family: Noto Serif JP, serif;
+  }
+}
 
 .step__list {
   display: grid;
   row-gap: 8vw;
   margin-top: 8vw;
+}
+@media screen and (min-width:768px) {
+  .step__list {
+    grid-template-columns: repeat(2, 1fr);
+    -webkit-column-gap: clamp(2.5666666667rem, 5.3472222222vw, 4.8125rem);
+       -moz-column-gap: clamp(2.5666666667rem, 5.3472222222vw, 4.8125rem);
+            column-gap: clamp(2.5666666667rem, 5.3472222222vw, 4.8125rem);
+    row-gap: clamp(1.5333333333rem, 3.1944444444vw, 2.875rem);
+    margin-top: clamp(3.3333333333rem, 6.9444444444vw, 6.25rem);
+  }
 }
 
 .step__item {
@@ -741,6 +857,12 @@ main {
           align-items: center;
   row-gap: 5.3333333333vw;
 }
+@media screen and (min-width:768px) {
+  .step__item {
+    row-gap: clamp(0.7rem, 1.4583333333vw, 1.3125rem);
+    position: relative;
+  }
+}
 
 .step__order {
   width: 19.7333333333vw;
@@ -750,28 +872,67 @@ main {
   -o-object-fit: cover;
      object-fit: cover;
 }
+@media screen and (min-width:768px) {
+  .step__order {
+    position: absolute;
+    top: clamp(-1.6666666667rem, -3.4722222222vw, -3.125rem);
+    left: clamp(-1.6666666667rem, -3.4722222222vw, -3.125rem);
+    width: clamp(2.4666666667rem, 5.1388888889vw, 4.625rem);
+    height: clamp(1.8666666667rem, 3.8888888889vw, 3.5rem);
+    z-index: 2;
+  }
+}
+
+.step__image {
+  position: relative;
+  z-index: 1;
+}
 
 .step__text {
   font-size: 4.2666666667vw;
   text-align: center;
   font-weight: 500;
 }
+@media screen and (min-width:768px) {
+  .step__text {
+    font-size: clamp(0.5333333333rem, 1.1111111111vw, 1rem);
+  }
+}
 
 /* =============================================
 新タイプ
 ============================================= */
-.new-type {
-  margin-top: 16vw;
+.step__new-type {
+  padding-top: 16vw;
   padding-bottom: 16vw;
+  background-color: #fff;
+}
+@media screen and (min-width:768px) {
+  .step__new-type {
+    margin: clamp(2rem, 4.1666666667vw, 3.75rem) clamp(2.1666666667rem, 4.5138888889vw, 4.0625rem);
+    padding: clamp(2rem, 4.1666666667vw, 3.75rem) clamp(4.1666666667rem, 8.6805555556vw, 7.8125rem);
+    background-color: #fff;
+  }
 }
 
-.new-type__title {
+@media screen and (min-width:768px) {
+  .step__new-type-inner {
+    margin-inline: unset;
+  }
+}
+
+.step__new-type-title {
   text-align: center;
   font-size: 6.4vw;
   font-weight: 350;
 }
+@media screen and (min-width:768px) {
+  .step__new-type-title {
+    font-size: clamp(1rem, 2.0833333333vw, 1.875rem);
+  }
+}
 
-.new-type__content {
+.step__new-type-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -785,13 +946,44 @@ main {
   row-gap: 6.4vw;
   margin-top: 8vw;
 }
-
-.new-type__arrow {
-  width: 10.1333333333vw;
-  height: 9.3333333333vw;
+@media screen and (min-width:768px) {
+  .step__new-type-content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-column-gap: clamp(1.2rem, 2.5vw, 2.25rem);
+       -moz-column-gap: clamp(1.2rem, 2.5vw, 2.25rem);
+            column-gap: clamp(1.2rem, 2.5vw, 2.25rem);
+    margin-top: clamp(1.4666666667rem, 3.0555555556vw, 2.75rem);
+  }
 }
 
-.new-type__button {
-  margin-top: 16vw;
+.step__new-type-arrow {
+  width: 10.1333333333vw;
+  height: 10.1333333333vw;
+}
+.step__new-type-arrow img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width:768px) {
+  .step__new-type-arrow {
+    width: clamp(1.2666666667rem, 2.6388888889vw, 2.375rem);
+    height: clamp(1.2666666667rem, 2.6388888889vw, 2.375rem);
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+}
+
+.about-button {
+  margin-bottom: 16vw;
+  width: 77.0666666667vw;
   background-color: #e5f1f8;
+}
+@media screen and (min-width:768px) {
+  .about-button {
+    margin: clamp(2rem, 4.1666666667vw, 3.75rem) auto;
+    width: clamp(9.6333333333rem, 20.0694444444vw, 18.0625rem);
+  }
 }

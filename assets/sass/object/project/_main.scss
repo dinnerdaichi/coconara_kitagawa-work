@@ -49,6 +49,10 @@ body {
 
 p+p {
   margin-top: vw-sp(5);
+
+  @include m.mq(pc) {
+    margin-top: rclamp(5, 1440);
+  }
 }
 
 a {
@@ -114,6 +118,10 @@ picture img {
 .section__inner {
   @include m.mq(sp) {
     margin-inline: vw-sp(16);
+  }
+
+  @include m.mq(pc) {
+    margin-inline: rclamp(170, 1440);
   }
 }
 
@@ -600,25 +608,50 @@ main {
 
 .about {
   margin-top: vw-sp(60);
+
+  @include m.mq(pc) {
+    margin-top: rclamp(100, 1440);
+  }
+}
+
+.about__title {
+  color: $accent-blue;
+
+  @include m.mq(pc) {
+    font-size: rclamp(35, 1440);
+    font-weight: rclamp(600, 1440);
+  }
+}
+
+.about__thumnail {
+  display: block;
+  margin-top: vw-sp(40);
+
+  @include m.mq(pc) {
+    margin: rclamp(60, 1440) rclamp(260, 1440);
+  }
 }
 
 .about__inner {
   padding-inline: vw-sp(15);
 }
 
-.about__title {
-  color: $accent-blue;
-}
-
-.about__thumnail {
-  display: block;
-  margin-top: vw-sp(40);
+.about__text-area {
+  @include m.mq(pc) {
+    margin-top: rclamp(60, 1440);
+  }
 }
 
 .about__list {
   display: grid;
   row-gap: vw-sp(60);
   margin-top: vw-sp(60);
+
+  @include m.mq(pc) {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: rclamp(130, 1440);
+    margin-top: rclamp(60, 1440);
+  }
 }
 
 .about__item {
@@ -626,17 +659,29 @@ main {
   flex-direction: column;
   align-items: center;
   row-gap: vw-sp(30);
+
+  @include m.mq(pc) {
+    row-gap: rclamp(12, 1440);
+  }
 }
 
 .about__image {
   width: vw-sp(179);
   height: auto;
+
+  @include m.mq(pc) {
+    width: rclamp(240, 1440);
+  }
 }
 
 .about__item-text {
   text-align: center;
   font-size: vw-sp(16);
   font-weight: 500;
+
+  @include m.mq(pc) {
+    font-size: rclamp(16, 1440);
+  }
 }
 
 .about__text--bold {
@@ -648,6 +693,11 @@ main {
   width: vw-sp(289);
   color: #fff;
   background-color: $accent-blue;
+
+  @include m.mq(pc) {
+    margin: rclamp(60, 1440) auto;
+    width: rclamp(300, 1440);
+  }
 }
 
 /* =============================================
@@ -655,17 +705,44 @@ main {
 ============================================= */
 
 .step {
-  padding-block: vw-sp(60);
   margin-top: vw-sp(60);
   background-color: $light-blue;
+
+  @include m.mq(pc) {
+    padding-block: rclamp(60, 1440);
+    margin: rclamp(100, 1440) rclamp(170, 1440);
+    background-color: $light-blue;
+  }
+}
+
+.step__bg {
+  @include m.mq(sp) {
+    padding-block: vw-sp(60);
+    background-color: $light-blue;
+  }
 }
 
 .step__inner {}
+
+.step__wrapper {
+  @include m.mq(pc) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: rclamp(8, 1440);
+  }
+}
 
 .step__decoration {
   margin: 0 auto;
   width: vw-sp(176);
   height: vw-sp(58);
+
+  @include m.mq(pc) {
+    margin: unset;
+    width: rclamp(164, 1440);
+    height: rclamp(54, 1440);
+  }
 }
 
 .step__title {
@@ -674,12 +751,25 @@ main {
   font-size: vw-sp(24);
   color: $accent-blue;
   font-weight: 350;
+
+  @include m.mq(pc) {
+    margin-top: unset;
+    font-size: rclamp(30, 1440);
+    font-family: Noto Serif JP, serif;
+  }
 }
 
 .step__list {
   display: grid;
   row-gap: vw-sp(30);
   margin-top: vw-sp(30);
+
+  @include m.mq(pc) {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: rclamp(77, 1440);
+    row-gap: rclamp(46, 1440);
+    margin-top: rclamp(100, 1440);
+  }
 }
 
 .step__item {
@@ -687,6 +777,11 @@ main {
   flex-direction: column;
   align-items: center;
   row-gap: vw-sp(20);
+
+  @include m.mq(pc) {
+    row-gap: rclamp(21, 1440);
+    position: relative;
+  }
 }
 
 .step__order {
@@ -696,45 +791,101 @@ main {
   img {
     object-fit: cover;
   }
+
+  @include m.mq(pc) {
+    position: absolute;
+    top: rclamp(-50, 1440); // ← 上にちょっとはみ出す
+    left: rclamp(-50, 1440); // ← 左にも少し出す
+    width: rclamp(74, 1440);
+    height: rclamp(56, 1440);
+    z-index: 2; // ← 念のため画像の上に出す
+  }
+}
+
+.step__image {
+  position: relative; // ← 念のためつけておくと安心
+  z-index: 1;
 }
 
 .step__text {
   font-size: vw-sp(16);
   text-align: center;
   font-weight: 500;
+
+  @include m.mq(pc) {
+    font-size: rclamp(16, 1440);
+  }
 }
 
 /* =============================================
 新タイプ
 ============================================= */
 
-.new-type {
-  margin-top: vw-sp(60);
+.step__new-type {
+  padding-top: vw-sp(60);
   padding-bottom: vw-sp(60);
+  background-color: #fff;
+
+  @include m.mq(pc) {
+    margin: rclamp(60, 1440) rclamp(65, 1440);
+    padding: rclamp(60, 1440) rclamp(125, 1440);
+    background-color: #fff
+  }
 }
 
-.new-type__inner {}
+.step__new-type-inner {
 
-.new-type__title {
+  @include m.mq(pc) {
+    margin-inline: unset;
+  }
+}
+
+.step__new-type-title {
   text-align: center;
   font-size: vw-sp(24);
   font-weight: 350;
+
+  @include m.mq(pc) {
+    font-size: rclamp(30, 1440);
+  }
 }
 
-.new-type__content {
+.step__new-type-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: vw-sp(24);
   margin-top: vw-sp(30);
+
+  @include m.mq(pc) {
+    flex-direction: row;
+    column-gap: rclamp(36, 1440);
+    margin-top: rclamp(44, 1440);
+  }
 }
 
-.new-type__arrow {
+.step__new-type-arrow {
   width: vw-sp(38);
-  height: vw-sp(35);
+  height: vw-sp(38);
+
+  img {
+    object-fit: cover;
+  }
+
+  @include m.mq(pc) {
+    width: rclamp(38, 1440);
+    height: rclamp(38, 1440);
+    transform: rotate(-90deg);
+  }
 }
 
-.new-type__button {
-  margin-top: vw-sp(60);
+.about-button {
+  margin-bottom: vw-sp(60);
+  width: vw-sp(289);
   background-color: $light-blue;
+
+  @include m.mq(pc) {
+    margin: rclamp(60, 1440) auto;
+    width: rclamp(289, 1440);
+  }
 }
