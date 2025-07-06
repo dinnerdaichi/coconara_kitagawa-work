@@ -42,6 +42,10 @@ $accent-blue: #4596c3;
 $blue: #6e9fb9;
 $light-blue: #e5f1f8;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Noto Sans JP, serif;
   color: $text-color;
@@ -68,6 +72,14 @@ p+p {
 a {
   text-decoration: none;
   color: $text-color;
+}
+
+[id] {
+  scroll-margin-top: vw-sp(90);
+
+  @include m.mq(pc) {
+    scroll-margin-top: rclamp(100, 1440);
+  }
 }
 
 

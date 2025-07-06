@@ -20,6 +20,10 @@
 /* =============================================
 共通
 ============================================= */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Noto Sans JP, serif;
   color: #4f4f4f;
@@ -49,6 +53,15 @@ p + p {
 a {
   text-decoration: none;
   color: #4f4f4f;
+}
+
+[id] {
+  scroll-margin-top: 24vw;
+}
+@media screen and (min-width:768px) {
+  [id] {
+    scroll-margin-top: clamp(3.3333333333rem, 6.9444444444vw, 6.25rem);
+  }
 }
 
 @media screen and (min-width:768px) {
