@@ -482,6 +482,10 @@ main {
   }
 }
 
+.about-top__text--bold {
+  font-weight: 500;
+}
+
 .about-top__button {
   margin-top: vw-sp(38);
 
@@ -507,7 +511,7 @@ main {
   padding: vw-sp(50) vw-sp(42);
 
   @include m.mq(pc) {
-    padding: rclamp(60, 1440) rclamp(170, 1440);
+    padding: rclamp(60, 1440) rclamp(169, 1440);
   }
 }
 
@@ -519,10 +523,11 @@ main {
   margin-top: vw-sp(15);
 
   @include m.mq(pc) {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: rclamp(39, 1440);
-    grid-row-gap: rclamp(14, 1440);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: rclamp(39, 1440);
+    row-gap: rclamp(14, 1440);
     margin: rclamp(5, 1440) auto;
     max-width: rclamp(761, 1440);
   }

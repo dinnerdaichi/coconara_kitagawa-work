@@ -513,6 +513,10 @@ main {
   }
 }
 
+.about-top__text--bold {
+  font-weight: 500;
+}
+
 .about-top__button {
   margin-top: 10.1333333333vw;
 }
@@ -541,7 +545,7 @@ main {
 }
 @media screen and (min-width:768px) {
   .item-menu__inner {
-    padding: clamp(2rem, 4.1666666667vw, 3.75rem) clamp(5.6666666667rem, 11.8055555556vw, 10.625rem);
+    padding: clamp(2rem, 4.1666666667vw, 3.75rem) clamp(5.6333333333rem, 11.7361111111vw, 10.5625rem);
   }
 }
 
@@ -554,10 +558,18 @@ main {
 }
 @media screen and (min-width:768px) {
   .item-menu__list {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: clamp(1.3rem, 2.7083333333vw, 2.4375rem);
-    grid-row-gap: clamp(0.4666666667rem, 0.9722222222vw, 0.875rem);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-column-gap: clamp(1.3rem, 2.7083333333vw, 2.4375rem);
+       -moz-column-gap: clamp(1.3rem, 2.7083333333vw, 2.4375rem);
+            column-gap: clamp(1.3rem, 2.7083333333vw, 2.4375rem);
+    row-gap: clamp(0.4666666667rem, 0.9722222222vw, 0.875rem);
     margin: clamp(0.1666666667rem, 0.3472222222vw, 0.3125rem) auto;
     max-width: clamp(25.3666666667rem, 52.8472222222vw, 47.5625rem);
   }
