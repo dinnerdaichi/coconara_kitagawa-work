@@ -11,7 +11,7 @@
 .test {
   margin-top: clamp(1rem, 2.0833333333vw, 2.5rem);
 }
-@media screen and (max-width:480px) {
+@media screen and (max-width:767px) {
   .test {
     margin-top: 10.6666666667vw;
   }
@@ -34,19 +34,25 @@ a {
   color: #4f4f4f;
 }
 
-@media screen and (min-width:481px) {
+@media screen and (max-width:767px) {
+  .inner {
+    padding-inline: 4.2666666667vw;
+  }
+}
+
+@media screen and (min-width:768px) {
   .sp-only {
     display: none;
   }
 }
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:767px) {
   .pc-only {
     display: none;
   }
 }
 
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .inner-pc {
     padding: clamp(2.5rem, 5.2083333333vw, 6.25rem) clamp(4.25rem, 8.8541666667vw, 10.625rem);
   }
@@ -70,7 +76,7 @@ picture img {
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .button {
     padding: clamp(0.325rem, 0.6770833333vw, 0.8125rem) clamp(0.575rem, 1.1979166667vw, 1.4375rem);
     font-size: clamp(0.45rem, 0.9375vw, 1.125rem);
@@ -82,7 +88,7 @@ picture img {
   font-size: 6.6666666667vw;
   font-family: Noto Serif JP, serif;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .section__title {
     font-size: clamp(0.75rem, 1.5625vw, 1.875rem);
   }
@@ -94,7 +100,7 @@ picture img {
   font-size: 4.2666666667vw;
   line-height: 1.75;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .text-area {
     margin-top: clamp(0.75rem, 1.5625vw, 1.875rem);
     font-size: clamp(0.45rem, 0.9375vw, 1.125rem);
@@ -111,7 +117,7 @@ header {
   background: #fff;
   z-index: 100;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   header {
     height: clamp(2.5rem, 5.2083333333vw, 6.25rem);
   }
@@ -129,9 +135,10 @@ header {
           align-items: center;
   padding: 4vw 4.2666666667vw;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .header__inner {
     padding: clamp(0.5rem, 1.0416666667vw, 1.25rem) clamp(1.5rem, 3.125vw, 3.75rem);
+    height: inherit;
   }
 }
 
@@ -139,7 +146,7 @@ header {
   width: 48.2666666667vw;
   height: auto;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .header__logo {
     width: clamp(6.1rem, 12.7083333333vw, 15.25rem);
     height: clamp(2.125rem, 4.4270833333vw, 5.3125rem);
@@ -157,7 +164,7 @@ header {
      -moz-column-gap: 4.5333333333vw;
           column-gap: 4.5333333333vw;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .header__wrapper {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
@@ -170,7 +177,7 @@ header {
   width: 9.3333333333vw;
   height: 9.3333333333vw;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .header__icon {
     width: clamp(1.125rem, 2.34375vw, 2.8125rem);
     height: clamp(1.125rem, 2.34375vw, 2.8125rem);
@@ -201,7 +208,7 @@ header {
   /* 重なり順を一番上にする */
   cursor: pointer;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .drawer_open {
     display: none;
   }
@@ -220,7 +227,7 @@ header {
   transition: 0.5s;
   position: absolute;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .drawer_open span,
   .drawer_open span:before,
   .drawer_open span:after {
@@ -269,7 +276,7 @@ header {
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .nav_content {
     position: static;
     display: block;
@@ -290,11 +297,14 @@ header {
   font-size: 5.3333333333vw;
   list-style: none;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .nav_list {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-column-gap: clamp(0.675rem, 1.40625vw, 1.6875rem);
        -moz-column-gap: clamp(0.675rem, 1.40625vw, 1.6875rem);
             column-gap: clamp(0.675rem, 1.40625vw, 1.6875rem);
@@ -311,7 +321,7 @@ header {
   vertical-align: middle;
   background-color: #4f4f4f;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .nav_item span {
     display: none;
   }
@@ -320,7 +330,7 @@ header {
 .header__button {
   display: none;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .header__button {
     display: block;
     color: #fff;
@@ -331,7 +341,7 @@ header {
 .nav_item:not(:first-child) {
   margin-top: 13.3333333333vw;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .nav_item:not(:first-child) {
     margin-top: unset;
   }
@@ -347,7 +357,7 @@ main {
   position: relative;
   top: 24vw;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   main {
     top: clamp(2.5rem, 5.2083333333vw, 6.25rem);
   }
@@ -363,13 +373,13 @@ main {
 .primary__inner {
   padding: 8vw 5.8666666667vw 16vw;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .primary__inner {
     padding: 0 clamp(2.5rem, 5.2083333333vw, 6.25rem) clamp(1.5rem, 3.125vw, 3.75rem);
   }
 }
 
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .primary__title br {
     display: none;
   }
@@ -378,25 +388,25 @@ main {
 /* =============================================
 ウローバッグとは
 ============================================= */
-.about picture img {
+.about-top picture img {
   margin: 0 auto;
   max-width: clamp(20.075rem, 41.8229166667vw, 50.1875rem);
 }
 
-.about__inner {
+.about-top__inner {
   padding: 16vw 8.5333333333vw;
 }
-@media screen and (min-width:481px) {
-  .about__inner {
+@media screen and (min-width:768px) {
+  .about-top__inner {
     padding: clamp(1.5rem, 3.125vw, 3.75rem) clamp(3.65rem, 7.6041666667vw, 9.125rem) clamp(2.5rem, 5.2083333333vw, 6.25rem);
   }
 }
 
-.about__button {
+.about-top__button {
   margin-top: 10.1333333333vw;
 }
-@media screen and (min-width:481px) {
-  .about__button {
+@media screen and (min-width:768px) {
+  .about-top__button {
     width: clamp(7.225rem, 15.0520833333vw, 18.0625rem);
     margin: clamp(1.5rem, 3.125vw, 3.75rem) auto;
   }
@@ -409,7 +419,7 @@ main {
   text-align: center;
   background-color: #e5f1f8;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .item-menu {
     margin-bottom: clamp(2.5rem, 5.2083333333vw, 6.25rem);
   }
@@ -418,7 +428,7 @@ main {
 .item-menu__inner {
   padding: 13.3333333333vw 11.2vw;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .item-menu__inner {
     padding: clamp(1.5rem, 3.125vw, 3.75rem) clamp(4.25rem, 8.8541666667vw, 10.625rem);
   }
@@ -427,7 +437,7 @@ main {
 .item-menu__title {
   font-size: 8vw;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .item-menu__title {
     font-size: clamp(0.75rem, 1.5625vw, 1.875rem);
   }
@@ -436,7 +446,7 @@ main {
 .item-menu__subtitle {
   font-size: 4.2666666667vw;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .item-menu__subtitle {
     font-size: clamp(0.4rem, 0.8333333333vw, 1rem);
   }
@@ -449,7 +459,7 @@ main {
   grid-row-gap: 5.3333333333vw;
   margin-top: 4vw;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .item-menu__list {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -477,7 +487,7 @@ main {
   width: 33.3333333333vw;
   height: auto;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .item-menu__image {
     width: clamp(4.025rem, 8.3854166667vw, 10.0625rem);
   }
@@ -486,7 +496,7 @@ main {
 .item-menu__text {
   margin-top: 1.3333333333vw;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .item-menu__text {
     margin-top: clamp(0.225rem, 0.46875vw, 0.5625rem);
   }
@@ -498,7 +508,7 @@ main {
 .commitment__inner {
   padding: 16vw 3.7333333333vw;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .commitment__inner {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -522,7 +532,7 @@ main {
 .customer-review__inner {
   padding: 16vw 5.3333333333vw;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .customer-review__inner {
     padding: clamp(1.5rem, 3.125vw, 3.75rem) clamp(1.25rem, 2.6041666667vw, 3.125rem);
   }
@@ -531,7 +541,7 @@ main {
 .customer-review__title {
   font-size: 8vw;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .customer-review__title {
     font-size: clamp(0.75rem, 1.5625vw, 1.875rem);
   }
@@ -540,7 +550,7 @@ main {
 .customer-review__subtitle {
   font-size: 4.2666666667vw;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .customer-review__subtitle {
     font-size: clamp(0.4rem, 0.8333333333vw, 1rem);
   }
@@ -549,7 +559,7 @@ main {
 .customer-review__content {
   margin-top: 8vw;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .customer-review__content {
     margin-top: clamp(0.975rem, 2.03125vw, 2.4375rem);
   }
@@ -566,13 +576,13 @@ footer {
 .footer__inner {
   padding: 8vw 9.8666666667vw;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .footer__inner {
     padding: clamp(1.4rem, 2.9166666667vw, 3.5rem) clamp(4.325rem, 9.0104166667vw, 10.8125rem);
   }
 }
 
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .footer__wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -592,7 +602,7 @@ footer {
 .footer__button {
   margin-bottom: 8.8vw;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .footer__button {
     margin-bottom: unset;
     width: clamp(7.5rem, 15.625vw, 18.75rem);
@@ -602,7 +612,7 @@ footer {
 .footer__button + .footer__button {
   margin-top: 8vw;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .footer__button + .footer__button {
     margin-top: unset;
   }
@@ -611,7 +621,7 @@ footer {
 .footer__copyright {
   color: #000;
 }
-@media screen and (min-width:481px) {
+@media screen and (min-width:768px) {
   .footer__copyright {
     margin-top: clamp(1.45rem, 3.0208333333vw, 3.625rem);
     text-align: right;
