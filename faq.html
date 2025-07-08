@@ -27,11 +27,11 @@
       </h1>
       <div class="header__wrapper">
         <div class="header__icon">
-          <a href="" target="_blank">
+          <a href="https://www.instagram.com/_kitagawa_works/" target="_blank">
             <img src="./assets/image/icon_insta.webp" alt="">
           </a>
         </div>
-        <a href="" class="header__button button">商品購入はこちら</a>
+        <a href="https://minne.com/@peko722?srsltid=AfmBOopLo_rZdngJ7OHQAMjooIuzQQNxZVICfKKozTimngxaoKcxRVCo" class="header__button button" target="_blank">商品購入はこちら</a>
         <!-- ハンバーガーメニュー部分 -->
         <div class="nav">
           <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
@@ -41,10 +41,10 @@
           <!-- メニュー -->
           <nav class="nav_content">
             <ul class="nav_list">
-              <li class="nav_item"><a href="./index.html#about-top"><span></span>ウローバッグカバーとは</a></li>
+              <li class="nav_item"><a href="./about.html"><span></span>ウローバッグカバーとは</a></li>
               <li class="nav_item"><a href="./index.html#item-menu"><span></span>商品一覧</a></li>
-              <li class="nav_item"><a href="./index.html#commitment-top"><span></span>こだわりのアイテム</a></li>
-              <li class="nav_item"><a href="./index.html#customer-review"><span></span>お客様の声</a></li>
+              <li class="nav_item"><a href="./commitment.html"><span></span>こだわりのアイテム</a></li>
+              <!-- <li class="nav_item"><a href="./index.html#customer-review"><span></span>お客様の声</a></li> -->
               <li class="nav_item"><a href="./faq.html#faq"><span></span>よくあるご質問</a></li>
               <li class="nav_item"><a href="./faq.html#contact"><span></span>お問い合わせ</a></li>
             </ul>
@@ -55,7 +55,7 @@
   </header>
 
   <main>
-    <section id="faq" class="faq">
+    <section id="faq" class="faq fade-in">
       <div class="faq__inner">
         <div class="faq__heading heading">
           <h2 class="faq__title heading__title">よくある質問</h2>
@@ -73,7 +73,7 @@
                 <p class="faq__answer-text">
                   土日祝日関係なく、翌日または翌々日に配送されるメリットがあります。(ウロバッグカバー、エプロン、エコバッグ、通園グッズ等)送料は430円です。ねこちゃんポーチなどの小物類は、定形郵便での配送
                   となります。送料は110円です。※こちらは土日祝日は配送されません。</p>
-                <p class="faq__answer-text"></p>
+                <p class="faq__answer-text">
                 なお、2個以上の配達、その他作品によって、送料をご相談させていただく場合がございます。</p>
               </div>
             </div>
@@ -101,13 +101,15 @@
                 <p class="faq__answer-text">
                   お客様の要望をしっかりと受け止めて、ご相談対応いたします。
                 </p>
-                <p class="faq__answer-text"></p>
+                <p class="faq__answer-text">
                 2点注意点として丁寧に作成しておりますが、素人のハンドメイドですので、ほつれや歪みがある場合がございます。ご理解いただける方のご購入お待ちしております。実物に近い色合いで撮影するように努めておりますが、撮影環境やご使用の端末によって、ご覧の画像のものと色の感じが多少異なる場合がありますのでご注意下さい。
                 </p>
 
               </div>
             </div>
           </li>
+        </ul>
+      </div>
     </section>
     <section id="contact" class="contact">
       <div class="contact__inner">
@@ -142,14 +144,22 @@
     <div class="footer__inner">
       <div class="footer__wrapper">
         <a href="./faq.html" class="footer__button button">よくある質問</a>
-        <a href="./faq.html" class="footer__button button">お問い合わせ</a>
-        <a href="" target="_blank" class="footer__button button">instagram</a>
+        <a href="./faq.html#contact" class="footer__button button">お問い合わせ</a>
+        <a href="https://www.instagram.com/_kitagawa_works/" target="_blank" class="footer__button button">instagram</a>
       </div>
       <p class="footer__copyright">(C)2025 kitagawa works</p>
     </div>
   </footer>
+
+   <!-- GSAP本体 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <!-- ScrollTrigger（スクロールアニメーションする場合） -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <script src="./assets/js/gsap.js"></script>
 </body>
 
-</body>
+
 
 </html>

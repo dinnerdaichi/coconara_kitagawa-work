@@ -27,11 +27,11 @@
       </h1>
       <div class="header__wrapper">
         <div class="header__icon">
-          <a href="" target="_blank">
+          <a href="https://www.instagram.com/_kitagawa_works/" target="_blank">
             <img src="./assets/image/icon_insta.webp" alt="">
           </a>
         </div>
-        <a href="" class="header__button button">商品購入はこちら</a>
+        <a href="https://minne.com/@peko722?srsltid=AfmBOopLo_rZdngJ7OHQAMjooIuzQQNxZVICfKKozTimngxaoKcxRVCo" class="header__button button" target="_blank">商品購入はこちら</a>
         <!-- ハンバーガーメニュー部分 -->
         <div class="nav">
           <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
@@ -41,10 +41,10 @@
           <!-- メニュー -->
           <nav class="nav_content">
             <ul class="nav_list">
-              <li class="nav_item"><a href="./index.html#about-top"><span></span>ウローバッグカバーとは</a></li>
+              <li class="nav_item"><a href="./about.html"><span></span>ウローバッグカバーとは</a></li>
               <li class="nav_item"><a href="./index.html#item-menu"><span></span>商品一覧</a></li>
-              <li class="nav_item"><a href="./index.html#commitment-top"><span></span>こだわりのアイテム</a></li>
-              <li class="nav_item"><a href="./index.html#customer-review"><span></span>お客様の声</a></li>
+              <li class="nav_item"><a href="./commitment.html"><span></span>こだわりのアイテム</a></li>
+              <!-- <li class="nav_item"><a href="./index.html#customer-review"><span></span>お客様の声</a></li> -->
               <li class="nav_item"><a href="./faq.html#faq"><span></span>よくあるご質問</a></li>
               <li class="nav_item"><a href="./faq.html#contact"><span></span>お問い合わせ</a></li>
             </ul>
@@ -56,10 +56,10 @@
 
   <main>
 
-    <section class="commitment">
+    <section class="commitment fade-in">
       <div class="commitment__inner section__inner">
         <h2 class="commitment__title section__title">こだわりのアイテム</h2>
-        <div class="commitment__line">
+        <div class="commitment__line first">
           <picture>
             <source srcset="./assets/image/sp-line.png" media="(max-width: 767px)">
             <source srcset="./assets/image/hp-line.png" media="(min-width: 768px)">
@@ -95,21 +95,29 @@
         </div>
       </div>
     </section>
-    <a href="./index.html" class="about-button button">TOPへ戻る</a>
+    <a href="./index.html" class="about-button button commitment__button">TOPへ戻る</a>
   </main>
 
   <footer>
     <div class="footer__inner">
       <div class="footer__wrapper">
         <a href="./faq.html" class="footer__button button">よくある質問</a>
-        <a href="./faq.html" class="footer__button button">お問い合わせ</a>
-        <a href="" target="_blank" class="footer__button button">instagram</a>
+        <a href="./faq.html#contact" class="footer__button button">お問い合わせ</a>
+        <a href="https://www.instagram.com/_kitagawa_works/" target="_blank" class="footer__button button">instagram</a>
       </div>
       <p class="footer__copyright">(C)2025 kitagawa works</p>
     </div>
   </footer>
+
+    <!-- GSAP本体 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <!-- ScrollTrigger（スクロールアニメーションする場合） -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./assets/js/gsap.js"></script>
 </body>
 
-</body>
+
 
 </html>
