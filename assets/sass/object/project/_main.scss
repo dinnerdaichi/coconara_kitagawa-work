@@ -1129,7 +1129,7 @@ main {
 .step__text {
   text-align: center;
   font-weight: 500;
-  margin-top: vw-sp(20);
+  margin-top: vw-sp(28);
 
   @include m.mq(pc){
      margin-top: 0;
@@ -1254,7 +1254,7 @@ TOPへ戻るボタン
 }
 
 .commitment__line {
-  margin-top: vw-sp(30);
+  margin-top: vw-sp(24);
 
 }
 
@@ -1266,6 +1266,9 @@ TOPへ戻るボタン
 }
 
 .commitment__line--reverse {
+
+  margin-top: vw-sp(28);
+
   @include m.mq(pc) {
     transform: rotate(180deg);
   }
@@ -1287,12 +1290,12 @@ TOPへ戻るボタン
 }
 
 .commitment__subtitle {
-  margin-top: vw-sp(30);
+  margin-top: vw-sp(16);
   text-align: center;
   font-size: vw-sp(24);
 
   @include m.mq(pc) {
-    margin-top: rclamp(60, 1440);
+    margin-top: rclamp(56, 1440);
     font-size: rclamp(30, 1440);
   }
 }
@@ -1307,6 +1310,10 @@ TOPへ戻るボタン
       margin-top: rclamp(30, 1440);
     }
   }
+}
+
+.commitment__text{
+  line-height: 1.9;
 }
 
 /* =============================================

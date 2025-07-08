@@ -1260,7 +1260,7 @@ main {
 .step__text {
   text-align: center;
   font-weight: 500;
-  margin-top: 5.3333333333vw;
+  margin-top: 7.4666666667vw;
 }
 @media screen and (min-width:768px) {
   .step__text {
@@ -1398,7 +1398,7 @@ TOPへ戻るボタン
 }
 
 .commitment__line {
-  margin-top: 8vw;
+  margin-top: 6.4vw;
 }
 
 @media screen and (min-width:768px) {
@@ -1407,6 +1407,9 @@ TOPへ戻るボタン
   }
 }
 
+.commitment__line--reverse {
+  margin-top: 7.4666666667vw;
+}
 @media screen and (min-width:768px) {
   .commitment__line--reverse {
     -webkit-transform: rotate(180deg);
@@ -1445,13 +1448,13 @@ TOPへ戻るボタン
 }
 
 .commitment__subtitle {
-  margin-top: 8vw;
+  margin-top: 4.2666666667vw;
   text-align: center;
   font-size: 6.4vw;
 }
 @media screen and (min-width:768px) {
   .commitment__subtitle {
-    margin-top: clamp(2rem, 4.1666666667vw, 3.75rem);
+    margin-top: clamp(1.8666666667rem, 3.8888888889vw, 3.5rem);
     font-size: clamp(1rem, 2.0833333333vw, 1.875rem);
   }
 }
@@ -1466,6 +1469,10 @@ TOPへ戻るボタン
   .commitment__text-area p + p {
     margin-top: clamp(1rem, 2.0833333333vw, 1.875rem);
   }
+}
+
+.commitment__text {
+  line-height: 1.9;
 }
 
 /* =============================================
