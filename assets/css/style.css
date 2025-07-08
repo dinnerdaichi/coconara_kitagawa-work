@@ -1562,6 +1562,10 @@ TOPへ戻るボタン
     padding-left: clamp(1rem, 2.0833333333vw, 1.875rem);
   }
 }
+.faq__answer-text a {
+  font-weight: bold;
+  color: #4596C3;
+}
 
 .faq__answer-text-area {
   margin-top: 2.6666666667vw;

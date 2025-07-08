@@ -1397,6 +1397,11 @@ padding-bottom: rclamp(26 ,1440);
   @include m.mq(pc){
      padding-left: rclamp(30 ,1440);
   }
+
+  a{
+    font-weight: bold;
+    color: #4596C3;
+  }
 }
 
 .faq__answer-text-area {
