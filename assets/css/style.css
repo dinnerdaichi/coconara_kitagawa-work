@@ -211,6 +211,7 @@ header {
   padding-block: 4.2666666667vw;
   -webkit-transition: all 1s 0s ease;
   transition: all 1s 0s ease;
+  height: 100%;
 }
 @media screen and (min-width:768px) {
   .header__inner {

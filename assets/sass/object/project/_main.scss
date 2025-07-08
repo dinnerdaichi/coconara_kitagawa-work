@@ -216,6 +216,7 @@ header {
   padding-inline: vw-sp(16) vw-sp(26);
   padding-block: vw-sp(16);
   transition: all 1s 0s ease;
+  height: 100%;
 
   @include m.mq(pc) {
     padding: rclamp(8, 1440) rclamp(27, 1440) rclamp(8, 1440) rclamp(60, 1440);
