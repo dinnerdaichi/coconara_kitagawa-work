@@ -550,7 +550,7 @@ main {
 }
 
 .about-top__inner {
-  margin-inline: vw-sp(38);
+  margin-inline: vw-sp(20);
 
   @include m.mq(pc) {
     margin-inline: rclamp(170, 1440);
