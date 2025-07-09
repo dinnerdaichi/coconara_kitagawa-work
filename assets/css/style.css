@@ -132,15 +132,16 @@ footer .button {
   max-width: 80vw;
 }
 
-@media screen and (max-width:767px) {
-  .section__inner {
-    margin-inline: 4.2666666667vw;
-  }
+.section__inner {
+  width: 100%;
+  padding-inline: 5.3333333333vw;
 }
 @media screen and (min-width:768px) {
   .section__inner {
-    margin-inline: 0;
-    padding-inline: clamp(4.8666666667rem, 10.1388888889vw, 9.125rem);
+    margin: 0 auto;
+    padding-inline: clamp(2.6666666667rem, 5.5555555556vw, 5rem);
+    max-width: 1340px;
+    width: 100%;
   }
 }
 
@@ -459,11 +460,14 @@ footer {
 }
 
 .footer__inner {
+  margin: 0 auto;
   padding: 9.0666666667vw 9.8666666667vw;
 }
 @media screen and (min-width:768px) {
   .footer__inner {
-    padding: clamp(1.8666666667rem, 3.8888888889vw, 3.5rem) clamp(5.3333333333rem, 11.1111111111vw, 10rem);
+    width: 100%;
+    max-width: 1340px;
+    padding: clamp(1.8666666667rem, 3.8888888889vw, 3.5rem) clamp(2.6666666667rem, 5.5555555556vw, 5rem);
   }
 }
 
@@ -472,9 +476,9 @@ footer {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -542,9 +546,6 @@ main {
   }
 }
 
-.primary__inner {
-  margin-inline: 5.8666666667vw;
-}
 @media screen and (min-width:768px) {
   .primary__inner {
     margin-inline: clamp(5.6666666667rem, 11.8055555556vw, 10.625rem);
@@ -637,20 +638,25 @@ main {
 .item-menu {
   margin-top: 16vw;
   text-align: center;
-  background-color: #e5f1f8;
 }
 @media screen and (min-width:768px) {
   .item-menu {
-    margin: clamp(3.3333333333rem, 6.9444444444vw, 6.25rem) clamp(5.6666666667rem, 11.8055555556vw, 10.625rem) 0;
+    margin: clamp(3.3333333333rem, 6.9444444444vw, 6.25rem) 0 0;
   }
 }
 
 .item-menu__inner {
   padding: 13.3333333333vw 6.4vw;
+  background-color: #e5f1f8;
+  width: 100vw;
+  margin: 0 calc(50% - 50vw);
 }
 @media screen and (min-width:768px) {
   .item-menu__inner {
-    padding: clamp(2rem, 4.1666666667vw, 3.75rem) clamp(5.6333333333rem, 11.7361111111vw, 10.5625rem);
+    padding: clamp(2rem, 4.1666666667vw, 3.75rem) 0;
+    width: 100%;
+    margin: 0 auto;
+    max-width: clamp(36.6666666667rem, 76.3888888889vw, 68.75rem);
   }
 }
 
@@ -716,11 +722,17 @@ main {
 ============================================= */
 .commitment-top {
   margin-top: 16vw;
-  margin-inline: 3.7333333333vw;
 }
 @media screen and (min-width:768px) {
   .commitment-top {
-    margin: clamp(3.3333333333rem, 6.9444444444vw, 6.25rem) clamp(5.6666666667rem, 11.8055555556vw, 10.625rem);
+    margin: clamp(2.9333333333rem, 6.1111111111vw, 5.5rem) clamp(5.6666666667rem, 11.8055555556vw, 10.625rem);
+  }
+}
+
+@media screen and (min-width:768px) {
+  #commitment-top .section__inner {
+    padding-inline: 0;
+    max-width: clamp(36.6666666667rem, 76.3888888889vw, 68.75rem);
   }
 }
 
@@ -935,20 +947,25 @@ main {
 .customer-review {
   margin-top: 16vw;
   text-align: center;
-  background-color: #e5f1f8;
 }
 @media screen and (min-width:768px) {
   .customer-review {
-    margin: clamp(4.4rem, 9.1666666667vw, 8.25rem) clamp(5.6666666667rem, 11.8055555556vw, 10.625rem) clamp(3.3333333333rem, 6.9444444444vw, 6.25rem);
+    margin: clamp(4.4rem, 9.1666666667vw, 8.25rem) 0 clamp(3.3333333333rem, 6.9444444444vw, 6.25rem);
   }
 }
 
 .customer-review__inner {
+  background-color: #e5f1f8;
   padding: 14.9333333333vw 5.3333333333vw;
+  width: 100vw;
+  margin: 0 calc(50% - 50vw);
 }
 @media screen and (min-width:768px) {
   .customer-review__inner {
     padding: clamp(1.8rem, 3.75vw, 3.375rem) clamp(1.6666666667rem, 3.4722222222vw, 3.125rem);
+    width: 100%;
+    margin: 0 auto;
+    max-width: clamp(36.6666666667rem, 76.3888888889vw, 68.75rem);
   }
 }
 
@@ -989,16 +1006,18 @@ main {
 
 .about__thumnail {
   display: block;
-  margin-top: 10.6666666667vw;
+  width: 100vw;
+  margin: 10.6666666667vw calc(50% - 50vw) 0;
 }
 @media screen and (min-width:768px) {
   .about__thumnail {
-    margin: clamp(2rem, 4.1666666667vw, 3.75rem) clamp(8.6666666667rem, 18.0555555556vw, 16.25rem);
+    max-width: clamp(30.6666666667rem, 63.8888888889vw, 57.5rem);
+    width: 100%;
+    margin: clamp(2rem, 4.1666666667vw, 3.75rem) auto 0;
   }
 }
 
 .about__inner {
-  padding-inline: 6.4vw;
   margin-top: 15.4666666667vw;
 }
 @media screen and (min-width:768px) {
@@ -1121,20 +1140,28 @@ main {
 ============================================= */
 .step {
   margin-top: 16vw;
-  background-color: #e5f1f8;
 }
 @media screen and (min-width:768px) {
   .step {
-    padding-block: clamp(2rem, 4.1666666667vw, 3.75rem) 1px;
-    margin: clamp(3.3333333333rem, 6.9444444444vw, 6.25rem) clamp(5.6666666667rem, 11.8055555556vw, 10.625rem) 0;
-    background-color: #e5f1f8;
+    margin-top: clamp(3.6666666667rem, 7.6388888889vw, 6.875rem);
   }
 }
 
-@media screen and (max-width:767px) {
+.step__bg {
+  background-color: #e5f1f8;
+  width: 100vw;
+  margin: 0 calc(50% - 50vw);
+  padding-top: 16vw;
+  padding-inline: 5.3333333333vw;
+}
+@media screen and (min-width:768px) {
   .step__bg {
-    padding-block: 16vw;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-block: clamp(1.6666666667rem, 3.4722222222vw, 3.125rem) clamp(1.6666666667rem, 3.4722222222vw, 3.125rem);
     background-color: #e5f1f8;
+    padding-inline: clamp(2.1333333333rem, 4.4444444444vw, 4rem);
   }
 }
 
@@ -1186,18 +1213,25 @@ main {
 }
 
 .step__list {
-  display: grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   row-gap: 8vw;
   margin-top: 8vw;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 @media screen and (min-width:768px) {
   .step__list {
-    grid-template-columns: repeat(2, 1fr);
+    max-width: clamp(27.5rem, 57.2916666667vw, 51.5625rem);
+    margin: clamp(3.0666666667rem, 6.3888888889vw, 5.75rem) auto 0;
+    row-gap: clamp(1.4666666667rem, 3.0555555556vw, 2.75rem);
     -webkit-column-gap: clamp(2.5666666667rem, 5.3472222222vw, 4.8125rem);
        -moz-column-gap: clamp(2.5666666667rem, 5.3472222222vw, 4.8125rem);
             column-gap: clamp(2.5666666667rem, 5.3472222222vw, 4.8125rem);
-    row-gap: clamp(1.3333333333rem, 2.7777777778vw, 2.5rem);
-    margin-top: clamp(3.0666666667rem, 6.3888888889vw, 5.75rem);
   }
 }
 
@@ -1212,13 +1246,15 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 4.2666666667vw;
+  margin-top: 2.6666666667vw;
 }
 @media screen and (min-width:768px) {
   .step__item {
     row-gap: clamp(0.7rem, 1.4583333333vw, 1.3125rem);
     position: relative;
     margin-top: 0;
+    width: 100%;
+    max-width: clamp(12.4666666667rem, 25.9722222222vw, 23.375rem);
   }
 }
 
@@ -1233,7 +1269,7 @@ main {
   .step__order {
     position: absolute;
     top: -9%;
-    left: clamp(-1.6666666667rem, -3.4722222222vw, -3.125rem);
+    left: -10%;
     width: clamp(2.4666666667rem, 5.1388888889vw, 4.625rem);
     height: clamp(1.8666666667rem, 3.8888888889vw, 3.5rem);
     z-index: 2;
@@ -1245,6 +1281,7 @@ main {
   z-index: 1;
   margin-top: 5.3333333333vw;
   height: 64vw;
+  width: 100%;
 }
 @media screen and (min-width:768px) {
   .step__image {
@@ -1256,6 +1293,7 @@ main {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  width: 100%;
 }
 
 .step__text {
@@ -1275,12 +1313,15 @@ main {
 .step__new-type {
   padding-top: 16vw;
   background-color: #fff;
+  width: 100vw;
+  margin: 16vw calc(50% - 50vw);
 }
 @media screen and (min-width:768px) {
   .step__new-type {
-    margin: clamp(2rem, 4.1666666667vw, 3.75rem) clamp(2.1666666667rem, 4.5138888889vw, 4.0625rem);
+    width: 100%;
     padding: clamp(2rem, 4.1666666667vw, 3.75rem) clamp(4.1666666667rem, 8.6805555556vw, 7.8125rem);
     background-color: #fff;
+    margin: clamp(2rem, 4.1666666667vw, 3.75rem) 0;
   }
 }
 
@@ -1479,15 +1520,36 @@ TOPへ戻るボタン
 /* =============================================
 よくある質問
 ============================================= */
-.faq {
-  padding-block: 16vw 26.6666666667vw;
-  background-color: #e5f1f8;
-}
 @media screen and (min-width:768px) {
   .faq {
-    padding: clamp(3.3333333333rem, 6.9444444444vw, 6.25rem) clamp(2.1666666667rem, 4.5138888889vw, 4.0625rem);
-    margin-inline: clamp(5.6666666667rem, 11.8055555556vw, 10.625rem);
+    padding-block: 0;
     margin-top: clamp(1.3333333333rem, 2.7777777778vw, 2.5rem);
+  }
+}
+
+#faq .section__inner {
+  padding-inline: 0;
+}
+@media screen and (min-width:768px) {
+  #faq .section__inner {
+    max-width: clamp(44.6666666667rem, 93.0555555556vw, 83.75rem);
+    padding-inline: clamp(2.6666666667rem, 5.5555555556vw, 5rem);
+  }
+}
+
+.faq__inner {
+  padding-top: 16vw;
+  background-color: #e5f1f8;
+  padding-bottom: 29.3333333333vw;
+}
+@media screen and (min-width:768px) {
+  .faq__inner {
+    width: 100%;
+    max-width: 1100px;
+    padding-top: clamp(3.3333333333rem, 6.9444444444vw, 6.25rem);
+    padding-inline: clamp(2.1333333333rem, 4.4444444444vw, 4rem);
+    padding-bottom: clamp(3.3333333333rem, 6.9444444444vw, 6.25rem);
+    margin: 0 auto;
   }
 }
 
@@ -1589,7 +1651,7 @@ TOPへ戻るボタン
 @media screen and (min-width:768px) {
   .contact {
     max-width: clamp(32.3333333333rem, 67.3611111111vw, 60.625rem);
-    padding-block: 0 clamp(3rem, 6.25vw, 5.625rem);
+    padding-block: 0 clamp(1rem, 2.0833333333vw, 1.875rem);
     margin-top: clamp(3rem, 6.25vw, 5.625rem);
   }
 }
